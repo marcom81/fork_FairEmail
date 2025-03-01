@@ -7812,10 +7812,8 @@ public class FragmentCompose extends FragmentBase {
             if (args.getBoolean("large"))
                 ToastEx.makeText(getContext(), R.string.title_large_body, Toast.LENGTH_LONG).show();
 
-            if (args.getBundle("extras").getBoolean("silent")) {
-                etBody.setTag(null);
+            if (args.getBundle("extras").getBoolean("silent"))
                 return;
-            }
 
             boolean needsEncryption = args.getBoolean("needsEncryption");
             int action = args.getInt("action");
