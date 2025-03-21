@@ -1554,7 +1554,8 @@ class Core {
                     }
 
                     for (Flags.Flag flag : imessage.getFlags().getSystemFlags())
-                        icopy.setFlag(flag, true);
+                        if (flag != Flags.Flag.DRAFT || EntityFolder.DRAFTS.equals(target.type))
+                            icopy.setFlag(flag, true);
 
                     icopies.add(icopy);
                 }
@@ -3005,10 +3006,13 @@ class Core {
                         folder.setProperties();
                         folder.setSpecials(account);
 
-                        if (selectable)
+                        if (selectable) {
                             folder.inheritFrom(parent);
-                        if (user && sync_added_folders && EntityFolder.USER.equals(type))
-                            folder.synchronize = true;
+                            if (user && sync_added_folders && EntityFolder.USER.equals(type)) {
+                                folder.synchronize = true;
+                                folder.notify = true;
+                            }
+                        }
 
                         folder.id = db.folder().insertFolder(folder);
                         Log.i(folder.name + " added type=" + folder.type + " sync=" + folder.synchronize);
@@ -3250,10 +3254,11 @@ class Core {
             db.beginTransaction();
 
             long id = jargs.getLong(0);
+            boolean browsed = jargs.optBoolean(1);
             if (id < 0) {
                 EntityLog.log(context, "Executing deferred daily rules for message=" + message.id);
                 List<EntityRule> rules = db.rule().getEnabledRules(message.folder, true);
-                EntityRule.run(context, rules, message, null, null);
+                EntityRule.run(context, rules, message, browsed, null, null);
             } else {
                 EntityRule rule = db.rule().getRule(id);
                 if (rule == null)
@@ -3263,7 +3268,7 @@ class Core {
                     throw new IllegalArgumentException("Message without content id=" + rule.id + ":" + rule.name);
 
                 rule.async = true;
-                rule.execute(context, message, null);
+                rule.execute(context, message, browsed, null);
             }
 
             db.setTransactionSuccessful();
@@ -3724,7 +3729,7 @@ class Core {
                                 attachment.id = db.attachment().insertAttachment(attachment);
                             }
 
-                            runRules(context, headers, body, account, folder, message, rules);
+                            runRules(context, headers, body, account, folder, message, false, rules);
                             reportNewMessage(context, account, folder, message);
 
                             db.setTransactionSuccessful();
@@ -5011,7 +5016,7 @@ class Core {
                     attachment.id = db.attachment().insertAttachment(attachment);
                 }
 
-                runRules(context, headers, body, account, folder, message, rules);
+                runRules(context, headers, body, account, folder, message, browsed, rules);
 
                 if (message.blocklist != null && message.blocklist) {
                     boolean use_blocklist = prefs.getBoolean("use_blocklist", false);
@@ -5255,7 +5260,7 @@ class Core {
                     db.message().updateMessage(message);
 
                     if (process)
-                        runRules(context, headers, body, account, folder, message, rules);
+                        runRules(context, headers, body, account, folder, message, browsed, rules);
 
                     db.setTransactionSuccessful();
                 } finally {
@@ -5455,7 +5460,7 @@ class Core {
 
     private static void runRules(
             Context context, List<Header> headers, String html,
-            EntityAccount account, EntityFolder folder, EntityMessage message,
+            EntityAccount account, EntityFolder folder, EntityMessage message, boolean browsed,
             List<EntityRule> rules) {
 
         if (EntityFolder.INBOX.equals(folder.type)) {
@@ -5475,7 +5480,7 @@ class Core {
         try {
             boolean executed = false;
             if (pro) {
-                int applied = EntityRule.run(context, rules, message, headers, html);
+                int applied = EntityRule.run(context, rules, message, browsed, headers, html);
                 executed = (applied > 0);
             }
 

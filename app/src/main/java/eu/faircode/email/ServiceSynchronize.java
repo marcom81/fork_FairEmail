@@ -983,7 +983,6 @@ public class ServiceSynchronize extends ServiceBase implements SharedPreferences
 
                 last = stats;
 
-                EntityLog.log(ServiceSynchronize.this, "Widget update");
                 Widget.update(ServiceSynchronize.this);
 
                 boolean badge = prefs.getBoolean("badge", true);
@@ -1382,6 +1381,7 @@ public class ServiceSynchronize extends ServiceBase implements SharedPreferences
                             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ServiceSynchronize.this);
                             boolean threading = prefs.getBoolean("threading", true);
                             boolean flag_unsnoozed = prefs.getBoolean("flag_unsnoozed", false);
+                            boolean important_unsnoozed = prefs.getBoolean("important_unsnoozed", false);
 
                             // Show thread
                             List<EntityMessage> messages = db.message().getMessagesByThread(
@@ -1392,6 +1392,12 @@ public class ServiceSynchronize extends ServiceBase implements SharedPreferences
                             db.message().setMessageUnsnoozed(message.id, true);
                             if (flag_unsnoozed)
                                 EntityOperation.queue(ServiceSynchronize.this, message, EntityOperation.FLAG, false);
+                            if (important_unsnoozed) {
+                                db.message().setMessageImportance(message.id, EntityMessage.PRIORITIY_HIGH);
+                                EntityOperation.queue(ServiceSynchronize.this, message, EntityOperation.KEYWORD,
+                                        MessageHelper.FLAG_HIGH_IMPORTANCE, true);
+
+                            }
                             EntityOperation.queue(ServiceSynchronize.this, message, EntityOperation.SEEN, false, false);
                         }
 

@@ -347,6 +347,11 @@
     </string>
     <string name="title_advanced_hint_remark">        Indstillingerne er kategoriseret efter fane, opdelt i afsnit, organiseret efter udseende/brug, og er søgbare.
     </string>
+    <string name="title_advanced_hint_options">        Man behøver ikke de fleste af mulighederne, og da nogle heraf er ret specifikke,
+        er det er forståeligt, hvis funktionen af alle mulighederne ikke er umiddelbart klar.
+        Giv venligt ikke dårlig anmeldelse blot for antallet af muligheder eller for manglende forståelse af dem alle med det samme.
+        Alle muligheder er nyttige for flere end et par personer, men måske er man ikke blandt dem (endnu).
+    </string>
     <string name="title_advanced_hint_setup">En konto kan opsættes ved at trykke på guideknappen på hovedopsætningsskærmen.</string>
     <string name="title_advanced_section_main">Hovedindstillinger</string>
     <string name="title_advanced_section_synchronize">Modtag</string>
@@ -657,6 +662,7 @@
     <string name="title_advanced_reset_importance">Nulstil vigtighed, når beskeder flyttes</string>
     <string name="title_advanced_star_snoozed">Auto-tilføj stjerne, når beskeder slumres</string>
     <string name="title_advanced_star_unsnoozed">Auto-fjern stjerne, når beskedslumring ophæves</string>
+    <string name="title_advanced_important_unsnoozed">Gør automatisk vækkede beskeder vigtige</string>
     <string name="title_advanced_auto_important">Gør automatisk stjernemarkerede beskeder vigtige</string>
     <string name="title_advanced_cancel_snooze">Afbryd udsættelse ved flytning af beskeder</string>
     <string name="title_advanced_auto_block_sender">Blokér automatisk afsenderen ved spamanmeldelse</string>
@@ -785,6 +791,7 @@
     <string name="title_advanced_class_min_difference">Minimumsklassedifferens: %1$s %%</string>
     <string name="title_advanced_show_filtered">Vis et filterikon, når regler er anvendt</string>
     <string name="title_advanced_haptic_feedback">Haptisk feedback for vigtige handlinger</string>
+    <string name="title_advanced_haptic_feedback_swipe" comment="title_advanced_haptic_feedback_swipe&#10;Title for on/off option in the miscellaneous settings tab page">Haptisk feedback ved strygning til venstre/højre</string>
     <string name="title_advanced_language">Sprog</string>
     <string name="title_advanced_language_system">System</string>
     <string name="title_advanced_integrations_hint">Cloud-tjenesterne nedenfor er ikke en del af appen, og evt. betalinger vil gå direkte til tjenesten og ikke til app-udvikleren.</string>
@@ -1235,7 +1242,7 @@
     <string name="title_filters_active">Ét eller flere filtre er aktive</string>
     <string name="title_duplicate_in">Dubletbeskeder i %1$s</string>
     <string name="title_trashed_from">Slettede beskeder fra %1$s</string>
-    <string name="title_sent_to" comment="title_sent_to&#10;Text to tell that a message was sent to someone">Sendte besked til %1$s</string>
+    <string name="title_sent_to">Sendte besked til %1$s</string>
     <string name="title_subject_reply">Sv: %1$s</string>
     <string name="title_subject_forward">Vs: %1$s</string>
     <string name="title_subject_reply_alt">Sv: %1$s</string>

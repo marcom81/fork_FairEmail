@@ -59,7 +59,7 @@
 <p><br /></p>
 <h2 id="index">Index</h2>
 <ul>
-<li><a href="#authorizing-accounts">Authorizing accounts</a></li>
+<li><a href="#authorizing-accounts">Configuring accounts</a></li>
 <li><a href="#howto">How to …?</a></li>
 <li><a href="#known-problems">Known problems</a></li>
 <li><a href="#planned-features">Planned features</a></li>
@@ -68,7 +68,7 @@
 </ul>
 <p><br /></p>
 <h2>
-<a name="authorizing-accounts"></a>Authorizing accounts
+<a name="authorizing-accounts"></a>Configuring accounts
 </h2>
 <p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23authorizing-accounts">Google Translate</a></p>
 <p>In most cases, the quick setup wizard will be able to automatically identify the correct configuration.</p>
@@ -96,14 +96,14 @@
 <li>Yandex: please check if <a href="https://yandex.com/support/mail/mail-clients/others.html">IMAP is enabled</a></li>
 <li>Comcast/Xfinity: please check if <a href="https://www.xfinity.com/support/articles/third-party-email-access">third party email access</a> is enabled</li>
 </ul>
-<p>Please see <a href="#faq22">here</a> for common error messages and solutions.</p>
+<p>Please see <a href="#faq22">this FAQ</a> for common error messages and solutions, and please see <a href="#faq207">this FAQ</a> in case of ‘<em>Authentication failed</em>’ or similar.</p>
 <p>Related questions:</p>
 <ul>
 <li><a href="#faq111">Is OAuth supported?</a></li>
 <li><a href="#faq133">Why is ActiveSync ™ not supported?</a></li>
 </ul>
 <p><br /></p>
-<p><a name="howto"></p>
+<p><a name="howto"></a></p>
 <h2 id="how-to">How to …?</h2>
 <p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23howto">Google Translate</a></p>
 <ul>
@@ -425,6 +425,7 @@
 <li><a href="#faq204">(204) How do I use Gemini?</a></li>
 <li><a href="#faq205">(205) How do I check the integrity of an APK file?</a></li>
 <li><a href="#faq206">(206) How can I move or copy messages from one account to another?</a></li>
+<li><a href="#faq207">(207) What does ‘Authentication failed’ mean?</a></li>
 </ul>
 <p><a href="#get-support">I have another question.</a></p>
 <p><a name="faq1"></a> <strong>(1) Which permissions are needed and why?</strong></p>
@@ -468,6 +469,9 @@
 <li><em>com.huawei.android.launcher.permission.CHANGE_BADGE</em></li>
 <li><em>com.huawei.android.launcher.permission.READ_SETTINGS</em></li>
 <li><em>com.huawei.android.launcher.permission.WRITE_SETTINGS</em></li>
+<li><em>com.hihonor.android.launcher.permission.CHANGE_BADGE</em></li>
+<li><em>com.hihonor.android.launcher.permission.READ_SETTINGS</em></li>
+<li><em>com.hihonor.android.launcher.permission.WRITE_SETTINGS</em></li>
 <li><em>android.permission.READ_APP_BADGE</em></li>
 <li><em>com.oppo.launcher.permission.READ_SETTINGS</em></li>
 <li><em>com.oppo.launcher.permission.WRITE_SETTINGS</em></li>
@@ -1657,8 +1661,12 @@ X-Google-Original-From: Somebody &lt;somebody+extra@example.org&gt;</code></pre>
 $week$
 $month$
 $year$
+$user$ (since version 1.2265)
+$extra$ (since version 1.2265)
 $domain$
 $group$ (since version 1.2030)</code></pre>
+<p><span class="math inline"><em>u</em><em>s</em><em>e</em><em>r</em></span> is the domain name of the ‘from’ email address, and <span class="math inline"><em>d</em><em>o</em><em>m</em><em>a</em><em>i</em><em>n</em></span> is the domain name of the ‘from’ email address: <em>user@domain</em>.</p>
+<p><span class="math inline"><em>e</em><em>x</em><em>t</em><em>r</em><em>a</em></span> is the part after the plus sign if the username: <em>user+extra$example.org</em>.</p>
 <p><span class="math inline"><em>g</em><em>r</em><em>o</em><em>u</em><em>p</em></span> will be replaced with the contact group name of the sender, provided that the related contact is assigned to one contact group only. Note that the Android contact provider isn’t very fast, so using this placeholder can slow down fetching messages.</p>
 <p><br /></p>
 <p>Since version 1.2132 it is possible to use the following placeholders in keywords:</p>
@@ -2516,6 +2524,7 @@ $NotDisplayed</code></pre>
 <p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq152">Google Translate</a></p>
 <p>You can insert the email addresses of all contacts in a contact group via the three dots menu of the message composer. You can also long press the person-add icon at the end of the to/cc/bcc/field.</p>
 <p>You can define contact groups with the Android contacts app, please see <a href="https://support.google.com/contacts/answer/30970">here</a> for instructions.</p>
+<p>Please be aware that your email provider might block a message to many recipients. If you want to send newsletters to many people, you should use a transaction email service.</p>
 <p><br /></p>
 <p><a name="faq153"></a> <strong>(153) Why does permanently deleting Gmail message not work?</strong></p>
 <p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq153">Google Translate</a></p>
@@ -3090,6 +3099,7 @@ adb install /path/to/FairEmail-xxx.apk</code></pre>
 <p>Note that DNSSEC and DANE are available in the GitHub version only.</p>
 <p><br></p>
 <p><a name="faq203"></a> <strong>(203) Where is my sent message?</strong></p>
+<p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq203">Google Translate</a></p>
 <p>When you write a message, it will be stored in the draft messages folder.</p>
 <p>When you send a message, it will be in the outbox first and later in the sent messages folder.</p>
 <p>The outbox is a queue of messages to be transferred to the email server of your email provider. After a message has been transferred to the email server, it will be stored in the sent messages folder.</p>
@@ -3099,6 +3109,7 @@ adb install /path/to/FairEmail-xxx.apk</code></pre>
 <p>Basically, an outgoing message is either in the draft messages folder, the outbox, or the sent messages folder.</p>
 <p><br></p>
 <p><a name="faq204"></a> <strong>(204) How do I use Gemini?</strong></p>
+<p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq204">Google Translate</a></p>
 <p>Gemini can only be used if configured and enabled.</p>
 <p><strong>Note that using Gemini is not free (anymore) !</strong></p>
 <p><br></p>
@@ -3116,6 +3127,7 @@ adb install /path/to/FairEmail-xxx.apk</code></pre>
 <p>This feature is experimental and requires version 1.2171 or later for the GitHub version and version 1.2182 or later for the Play Store version.</p>
 <p><br></p>
 <p><a name="faq205"></a> <strong>(205) How do I check the integrity of an APK file?</strong></p>
+<p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq205">Google Translate</a></p>
 <p>“<em>Artifact attestations enable you to create unfalsifiable provenance and integrity guarantees for the software you build.</em> <em>In turn, people who consume your software can verify where and how your software was built.</em>”</p>
 <p>Please <a href="https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds">see here</a> for details.</p>
 <p>You can verify in this way that an APK file was built and signed by a GitHub workflow:</p>
@@ -3128,12 +3140,23 @@ adb install /path/to/FairEmail-xxx.apk</code></pre>
 <p>Attestation of APK files is available from version 1.2209.</p>
 <p><br></p>
 <p><a name="faq206"></a> <strong>(206) How can I move or copy messages from one account to another?</strong></p>
+<p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq206">Google Translate</a></p>
 <p>There are two options for this:</p>
 <ol type="1">
 <li>Long press a message in the message list to select it, tap the three-dot button that appears, scroll to the bottom of the pop-up menu and select the target account.</li>
 <li>Long press the move-to button just above the message text to select the target account first.</li>
 </ol>
 <p>To copy a message to another account, long press the target folder.</p>
+<p><br></p>
+<p><a name="faq207"></a> <strong>(207) What does ‘Authentication failed’ mean?</strong></p>
+<p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq207">Google Translate</a></p>
+<p>Basically, ‘<em>Authentication failed</em>’, or similar, means that the email server of your email provider doesn’t accept the login (anymore).</p>
+<p>The first thing you should check whether you can still login via the website of the email provider. If you can’t login via the website of the email provider, you’ll need to contact the email provider for support. In any case, in that situation, no email app can login either.</p>
+<p>The obvious reason is that the username (generally the email address, but not always) or the password is incorrect. There are other possible causes too, like connecting from a suspicious network (according to the email provider), connecting from abroad, or using a VPN. Some email providers are more critical than other email provider regarding accepting connections.</p>
+<p>If you are using a VPN, please turn it off, or make an exception for FairEmail. With a VPN you share a network address with many other people, possibly not all behaving nicely. If an email server detects ‘unwanted’ behavior, like somebody trying to send spam messages, an email server often automatically blocks network addresses as a protection measure.</p>
+<p>You can try to switch to Wi-Fi or mobile data because this will result in using another (local) network address. Turning flight mode on for a while and turning it back off will mostly result in another network address being assigned. So, this is worth trying as well.</p>
+<p>Email providers like Google, Microsoft, and Yahoo/AOL require <a href="https://en.wikipedia.org/wiki/OAuth">OAuth</a> for logging in, which means it is not possible to configure an account manually, and that you <em>must</em> use the quick setup wizard to configure an account.</p>
+<p>Some email providers use account-specific host (server) names. So, please take care you use the correct host name when manually configuring an account.</p>
 <p><br></p>
 <h2>
 <a name="get-support"></a>Get support

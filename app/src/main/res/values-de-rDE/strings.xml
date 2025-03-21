@@ -348,6 +348,11 @@
     </string>
     <string name="title_advanced_hint_remark">        Die Optionen sind nach Registerkarten kategorisiert, in Abschnitte unterteilt, nach Erscheinungsbild oder Verwendung geordnet und durchsuchbar.
     </string>
+    <string name="title_advanced_hint_options">        Die meisten Optionen müssen von Ihnen nicht geändert werden. Einige sind sehr spezifisch,
+        weshalb verständlicherweise nicht bei allen Optionen die Funktionsweise sofort klar ist.
+        Bitte hinterlassen Sie keine schlechte Bewertung aufgrund der großen Anzahl an Optionen oder weil nicht alle auf Anhieb verständlich sind.
+        Alle Optionen sind für mehr als ein paar Personen nützlich, aber möglicherweise (noch) nicht für Sie.
+    </string>
     <string name="title_advanced_hint_setup">Sie können ein Konto konfigurieren, indem Sie auf dem Hauptkonfigurationsbildschirm auf die Schaltfläche des Assistenten tippen.</string>
     <string name="title_advanced_section_main">Grundeinstellungen</string>
     <string name="title_advanced_section_synchronize">Empfangen</string>
@@ -658,6 +663,7 @@
     <string name="title_advanced_reset_importance">Wichtigkeit beim Verschieben von Nachrichten zurücksetzen</string>
     <string name="title_advanced_star_snoozed">Zurückgestellte Nachrichten automatisch markieren</string>
     <string name="title_advanced_star_unsnoozed">Markierung automatisch entfernen, wenn die Nachricht nicht länger zurückgestellt wird</string>
+    <string name="title_advanced_important_unsnoozed">Nachrichten automatisch als wichtig kennzeichnen, wenn die Nachricht nicht länger zurückgestellt wird</string>
     <string name="title_advanced_auto_important">Markierte Nachrichten automatisch wichtig machen</string>
     <string name="title_advanced_cancel_snooze">»Zurückstellen« für verschobene Nachrichten deaktivieren</string>
     <string name="title_advanced_auto_block_sender">Absender automatisch sperren, wenn Spam gemeldet wird</string>
@@ -708,7 +714,7 @@
     <string name="title_advanced_biometrics_notify">Benachrichtigungsinhalt beim Verwenden der biometrischen Authentifizierung anzeigen</string>
     <string name="title_advanced_notify_open_folder">Ordner öffnen, wenn eine neue Nachricht geöffnet wird</string>
     <string name="title_advanced_light">Benachrichtigungslicht verwenden</string>
-    <string name="title_advanced_sound">Benachrichtigungston auswählen</string>
+    <string name="title_advanced_sound">Benachrichtigungston festlegen</string>
     <string name="title_advanced_notify_screen_on">Kurzes Einschalten des Bildschirms für Benachrichtigungen über neue Nachrichten</string>
     <string name="title_advanced_notifications_background">Hintergrunddienst verwenden, um Nachrichten zu synchronisieren</string>
     <string name="title_advanced_notifications_background_hint">Ein Hintergrunddienst kann jederzeit von Android angehalten werden, erfordert aber keine Benachrichtigung in der Statusleiste</string>
@@ -786,6 +792,7 @@
     <string name="title_advanced_class_min_difference">Minimaler Unterschied zur nächsten Klasse: %1$s %%</string>
     <string name="title_advanced_show_filtered">Filtersymbol anzeigen, wenn Regeln angewendet wurden</string>
     <string name="title_advanced_haptic_feedback">Haptisches Feedback bei wichtigen Aktionen</string>
+    <string name="title_advanced_haptic_feedback_swipe" comment="title_advanced_haptic_feedback_swipe&#10;Title for on/off option in the miscellaneous settings tab page">Haptisches Feedback beim Wischen nach links/rechts</string>
     <string name="title_advanced_language">Sprache</string>
     <string name="title_advanced_language_system">System</string>
     <string name="title_advanced_integrations_hint">Die nachfolgenden Cloud-Dienste sind nicht Teil der App. Alle Zahlungen gehen direkt an den Cloud-Dienst und nicht an den App-Entwickler.</string>
@@ -1146,7 +1153,7 @@
     <string name="title_insert_contact">Kontakt hinzufügen</string>
     <string name="title_edit_contact">Kontakt bearbeiten</string>
     <string name="title_delete_contact">Kontakt löschen?</string>
-    <string name="title_contact_email">Neue E-Mail</string>
+    <string name="title_contact_email">E-Mail</string>
     <string name="title_contact_name">Name</string>
     <string name="title_contact_group">Gruppe</string>
     <string name="title_import_contacts">vCards importieren</string>
@@ -1236,7 +1243,7 @@
     <string name="title_filters_active">Ein oder mehrere Filter aktiv</string>
     <string name="title_duplicate_in">Doppelte Nachricht in %1$s</string>
     <string name="title_trashed_from">Gelöschte Nachricht von %1$s</string>
-    <string name="title_sent_to" comment="title_sent_to&#10;Text to tell that a message was sent to someone">Nachricht an %1$s gesendet</string>
+    <string name="title_sent_to">Nachricht an %1$s gesendet</string>
     <string name="title_subject_reply">Re: %1$s</string>
     <string name="title_subject_forward">Fwd: %1$s</string>
     <string name="title_subject_reply_alt">AW: %1$s</string>
@@ -1981,7 +1988,7 @@
     <string name="title_hint_battery_optimizations">Akkuoptimierung ist immer noch aktiv</string>
     <string name="title_hint_data_saver">Wenn die Datenspar-Funktion aktiviert ist, kann die App im Hintergrund nicht synchronisiert werden und es können Verbindungsfehler auftreten.</string>
     <string name="title_hint_vpn">Manchmal werden Verbindungen über ein VPN vom E-Mail-Server gesperrt. Nur der E-Mail-Anbieter kann dieses Problem lösen.</string>
-    <string name="title_hint_dismiss">Sie können dieses Dialogfeld schließen, um den Hinweis zu entfernen.</string>
+    <string name="title_hint_dismiss">Sie können dieses Dialogfeld verwerfen, um den Hinweis zu entfernen.</string>
     <string name="title_hint_support">Wenn Sie eine Frage oder ein Problem haben, verwenden Sie bitte die Hilfe im Menü</string>
     <string name="title_hint_message_actions">Für den Papierkorb nach links wischen; zum Archivieren nach rechts wischen (falls verfügbar); die Wischgesten können in den Kontoeinstellungen konfiguriert werden</string>
     <string name="title_hint_outbox">Sie können nach links oder rechts wischen, um das Senden abzubrechen</string>

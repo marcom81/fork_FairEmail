@@ -309,6 +309,11 @@
     <string name="title_advanced_hint_title">گزینه‌های پیشرفته بیشتر</string>
     <string name="title_advanced_hint_message">        You are navigating to the more advanced options.        All options have commonly used standard values, which you do not need to change unless you have a different preference.
     </string>
+    <string name="title_advanced_hint_options">        شما به بیشتر گزینه‌ها نیاز نخواهید داشت و از آنجایی که برخی از گزینه‌ها کاملا خاص هستند،
+        اگر عملکرد همه گزینه‌ها بلافاصله مشخص نباشد قابل درک است.
+        لطفاً فقط به دلیل تعداد گزینه‌ها یا برای اینکه همه گزینه‌ها را فورا متوجه نشده‌اید، نظر بدی نگذارید.
+        همه گزینه‌ها برای بیش از چند نفر مفید هستند، اما شاید برای شما (هنوز) مفید نباشند.
+    </string>
     <string name="title_advanced_section_main">اصلی</string>
     <string name="title_advanced_section_synchronize">دریافت</string>
     <string name="title_advanced_section_send">ارسال</string>
@@ -557,6 +562,7 @@
     <string name="title_advanced_autoread">به طور خودکار پیام‌های انتقال یافته به عنوان خوانده شده علامت گذاری شود</string>
     <string name="title_advanced_autounstar">هنگام انتقال پیام‌ها ستاره‌ها را خودکار از پیام‌ها حذف کن</string>
     <string name="title_advanced_star_unsnoozed">حذف خودکار ستاره پیام‌های از تعلیق درآمده</string>
+    <string name="title_advanced_important_unsnoozed">پیام‌های به تعویق نیوفتاده را به‌ طور خودکار مهم در نظر بگیر</string>
     <string name="title_advanced_move_thread_all">هنگام جابجا کردن مکالمات انتخابی، کل پیام‌ها منتقل شود</string>
     <string name="title_advanced_move_thread_sent">به هنگام انتقال یک مکالمه، پیام‌های ارسالی را هم منتقل کن</string>
     <string name="title_advanced_swipe_trash_all">حذف همه پیام‌ها هنگام کشیدن مکالمه به سطل زباله</string>
@@ -626,6 +632,7 @@
     <string name="title_advanced_fts">ساخت شاخص جستجو</string>
     <string name="title_advanced_fts_indexed">%1$d / %2$d پیام ایندکس شد (%3$s)</string>
     <string name="title_advanced_show_filtered">آیکون فیلتر را زمانی که قاعده‌ای اعمال می‌شود نشان بده</string>
+    <string name="title_advanced_haptic_feedback_swipe" comment="title_advanced_haptic_feedback_swipe&#10;Title for on/off option in the miscellaneous settings tab page">بازخورد لمسی هنگام کشیدن انگشت به چپ/راست</string>
     <string name="title_advanced_language">زبان</string>
     <string name="title_advanced_language_system">سیستم</string>
     <string name="title_advanced_integrations_hint">سرویس‌های ابری زیر بخشی از اپلیکیشن نیستند. هرگونه پرداختی مستقیما به ارائه‌دهنده سرویس ابری و نه توسعه‌دهنده اپلیکیشن واریز خواهد شد.</string>
@@ -865,7 +872,7 @@
     <string name="title_no_messages">پیامی موجود نیست</string>
     <string name="title_filters_active">یک یا چند فیلتر فعالند</string>
     <string name="title_duplicate_in">پیام را در %1$s تکثیر کن</string>
-    <string name="title_sent_to" comment="title_sent_to&#10;Text to tell that a message was sent to someone">پیام فرستاده شد به %1$s</string>
+    <string name="title_sent_to">پیام فرستاده شد به %1$s</string>
     <string name="title_subject_reply">پاسخ: %1$s</string>
     <string name="title_subject_forward">هدایت: %1$s</string>
     <string name="title_subject_reply_alt">پاسخ: %1$s</string>

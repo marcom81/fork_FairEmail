@@ -2652,6 +2652,8 @@ public class FragmentMessages extends FragmentBase
                 message.ui_unsnoozed = false;
             }
 
+            if (seen_delay != 0)
+                setValue("auto_seen", message.id, true);
             setValue("expanded", message.id, value);
             if (scroll)
                 setValue("scroll", message.id, true);
@@ -3035,7 +3037,8 @@ public class FragmentMessages extends FragmentBase
 
             if (message.uid == null &&
                     message.accountProtocol == EntityAccount.TYPE_IMAP &&
-                    EntityFolder.DRAFTS.equals(message.folderType))
+                    (EntityFolder.DRAFTS.equals(message.folderType) ||
+                            EntityFolder.SENT.equals(message.folderType)))
                 return makeMovementFlags(0,
                         (EntityFolder.TRASH.equals(swipes.left_type) ? ItemTouchHelper.LEFT : 0) |
                                 (EntityFolder.TRASH.equals(swipes.right_type) ? ItemTouchHelper.RIGHT : 0));
@@ -3141,7 +3144,8 @@ public class FragmentMessages extends FragmentBase
 
             if (message.uid == null &&
                     message.accountProtocol == EntityAccount.TYPE_IMAP &&
-                    EntityFolder.DRAFTS.equals(message.folderType)) {
+                    (EntityFolder.DRAFTS.equals(message.folderType) ||
+                            EntityFolder.SENT.equals(message.folderType))) {
                 boolean right = EntityFolder.TRASH.equals(swipes.right_type);
                 boolean left = EntityFolder.TRASH.equals(swipes.left_type);
                 swipes = new TupleAccountSwipes();
@@ -3301,11 +3305,13 @@ public class FragmentMessages extends FragmentBase
 
                 if (expanded && swipe_reply) {
                     redraw(viewHolder);
+                    swipeFeedback();
                     onMenuReply(message, "reply", null, null);
                     return;
                 }
 
                 if (EntityFolder.OUTBOX.equals(message.folderType)) {
+                    swipeFeedback();
                     if (message.warning == null)
                         ActivityCompose.undoSend(message.id, getContext(), getViewLifecycleOwner(), getParentFragmentManager());
                     else
@@ -3335,7 +3341,8 @@ public class FragmentMessages extends FragmentBase
 
                 if (message.uid == null &&
                         message.accountProtocol == EntityAccount.TYPE_IMAP &&
-                        EntityFolder.DRAFTS.equals(message.folderType) &&
+                        (EntityFolder.DRAFTS.equals(message.folderType) ||
+                                EntityFolder.SENT.equals(message.folderType)) &&
                         EntityFolder.TRASH.equals(actionType)) {
                     action = EntityMessage.SWIPE_ACTION_DELETE;
                     actionType = null;
@@ -3346,6 +3353,8 @@ public class FragmentMessages extends FragmentBase
                         " type=" + actionType +
                         " message=" + message.id +
                         " folder=" + message.folderType);
+
+                swipeFeedback();
 
                 if (EntityMessage.SWIPE_ACTION_ASK.equals(action)) {
                     rvMessage.addOnChildAttachStateChangeListener(new RecyclerView.OnChildAttachStateChangeListener() {
@@ -3425,6 +3434,13 @@ public class FragmentMessages extends FragmentBase
                 return null;
 
             return message;
+        }
+
+        private void swipeFeedback() {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+            boolean haptic_feedback_swipe = prefs.getBoolean("haptic_feedback_swipe", false);
+            if (haptic_feedback_swipe)
+                Helper.performHapticFeedback(view, HapticFeedbackConstants.GESTURE_END);
         }
 
         private void redraw(RecyclerView.ViewHolder vh) {
@@ -3718,11 +3734,12 @@ public class FragmentMessages extends FragmentBase
             iProperties.setValue("tts", message.id, !tts);
 
             if (tts) {
-                Intent intent = new Intent(getContext(), ServiceTTS.class);
-                intent.putExtra(ServiceTTS.EXTRA_FLUSH, true);
-                intent.putExtra(ServiceTTS.EXTRA_TEXT, "");
-                intent.putExtra(ServiceTTS.EXTRA_LANGUAGE, message.language);
-                intent.putExtra(ServiceTTS.EXTRA_UTTERANCE_ID, "tts:" + message.id);
+                Intent intent = new Intent(getContext(), ServiceTTS.class)
+                        .setAction("tts:" + message.id)
+                        .putExtra(ServiceTTS.EXTRA_FLUSH, true)
+                        .putExtra(ServiceTTS.EXTRA_TEXT, "")
+                        .putExtra(ServiceTTS.EXTRA_LANGUAGE, message.language)
+                        .putExtra(ServiceTTS.EXTRA_UTTERANCE_ID, "tts:" + message.id);
                 getContext().startService(intent);
                 return;
             }
@@ -3773,11 +3790,12 @@ public class FragmentMessages extends FragmentBase
                     if (text == null)
                         return;
 
-                    Intent intent = new Intent(getContext(), ServiceTTS.class);
-                    intent.putExtra(ServiceTTS.EXTRA_FLUSH, true);
-                    intent.putExtra(ServiceTTS.EXTRA_TEXT, text);
-                    intent.putExtra(ServiceTTS.EXTRA_LANGUAGE, message.language);
-                    intent.putExtra(ServiceTTS.EXTRA_UTTERANCE_ID, "tts:" + message.id);
+                    Intent intent = new Intent(getContext(), ServiceTTS.class)
+                            .setAction("tts:" + message.id)
+                            .putExtra(ServiceTTS.EXTRA_FLUSH, true)
+                            .putExtra(ServiceTTS.EXTRA_TEXT, text)
+                            .putExtra(ServiceTTS.EXTRA_LANGUAGE, message.language)
+                            .putExtra(ServiceTTS.EXTRA_UTTERANCE_ID, "tts:" + message.id);
                     getContext().startService(intent);
                 }
 
@@ -6257,8 +6275,6 @@ public class FragmentMessages extends FragmentBase
             @Override
             protected List<EntityAccount> onExecute(Context context, Bundle args) throws Throwable {
                 DB db = DB.getInstance(context);
-                if (BuildConfig.DEBUG)
-                    return db.account().getAccounts();
                 return db.account().getSynchronizingAccounts(null);
             }
 
