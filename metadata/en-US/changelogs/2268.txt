@@ -4,11 +4,13 @@ Changelog
 
 Notices
 
-You may have noticed that fewer new features have been added recently and therefore fewer new (test) versions have been released.
-This is a result of saying “no” more often to new features that do not enhance the overall usability of the app (see below).
-What is not very motivating is that a number of people who consider themselves more important than other people have left bad reviews for this.
-I am not giving up, but this is just not nice, also considering that it is not a commercial project.
-On a positive note, a number of people contacted me to encourage me, for which many thanks!
+People keep asking me to add new, often exotic, features to the app, to whom I often say "no", and other people complain about too many features.
+Both groups of people leave bad reviews for this, which is frustrating, also because there are already enough bad reviews for the wrong reasons
+(email server problems, which unfortunately happen too often, etc.).
+The main problem is that more features now make more people unhappy than happy.
+Therefore, the rules for new features will be strictly followed from today.
+
+No worries, the app will continue to be maintained and supported as usual.
 
 ---
 
@@ -22,26 +24,16 @@ The security audit revealed no problems, so Google accounts can continue to be u
 
 ---
 
-People keep asking me to add new, often exotic, features to the app, to whom I often say "no", and other people complain about too many features.
-Both groups of people leave bad reviews for this, which is frustrating, also because there are already enough bad reviews for the wrong reasons
-(email server problems, which unfortunately happen too often, etc.).
-The main problem is that more features now make more people unhappy than happy.
-Therefore, the rules for new features will be strictly followed from today.
-
-No worries, the app will continue to be maintained and supported as usual.
-
----
-
 For support you can use the contact form.
-
----
 
 Ceratonykus
 
 Next version
 
-* Added optional TTS button
-* Added TTS notification action
+* Fixed all reported issues
+* Targeting Android 16 Baklava
+* Added optional TTS button / notification action
+* Improved accessibility
 * Small improvements and minor bug fixes
 * Updated AndroidX
 * Updated Public Suffix List

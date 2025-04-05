@@ -673,6 +673,7 @@
     <string name="title_advanced_notify_suppress_in_call">通话时延迟通知</string>
     <string name="title_advanced_notify_suppress_in_car">已连接 Android Auto 时延迟通知</string>
     <string name="title_advanced_notify_summary">仅显示摘要通知</string>
+    <string name="title_advanced_notify_subject" comment="title_advanced_notify_subject&#10;Title for option switch in the notification settings tab page">在通知中显示主题</string>
     <string name="title_advanced_notify_preview">在通知中显示邮件预览</string>
     <string name="title_advanced_notify_preview_all">预览所有文本</string>
     <string name="title_advanced_notify_preview_only">仅显示有预览文本的通知</string>
@@ -775,7 +776,7 @@
     <string name="title_advanced_class_min_difference">不同分类的最小差异：%1$s %%</string>
     <string name="title_advanced_show_filtered">应用规则时显示过滤器图标</string>
     <string name="title_advanced_haptic_feedback">对重要操作提供触觉反馈</string>
-    <string name="title_advanced_haptic_feedback_swipe" comment="title_advanced_haptic_feedback_swipe&#10;Title for on/off option in the miscellaneous settings tab page">向左/向右滑动时给予触觉反馈</string>
+    <string name="title_advanced_haptic_feedback_swipe">向左/向右滑动时给予触觉反馈</string>
     <string name="title_advanced_language">界面语言</string>
     <string name="title_advanced_language_system">系统</string>
     <string name="title_advanced_integrations_hint">下面的云服务不是应用的一部分。任何付款都将直接提供给云服务，而不是应用开发者。</string>

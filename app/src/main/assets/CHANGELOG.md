@@ -4,11 +4,13 @@
 
 ### Notices
 
-You may have noticed that fewer new features have been added recently and therefore fewer new (test) versions have been released.
-This is a result of saying “no” more often to new features that do not enhance the overall usability of the app (see below).
-What is not very motivating is that a number of people who consider themselves more important than other people have left bad reviews for this.
-I am not giving up, but this is just not nice, also considering that it is not a commercial project.
-On a positive note, a number of people contacted me to encourage me, for which many thanks!
+People keep asking me to add new, often exotic, features to the app, to whom I often say "no", and other people complain about too many features.
+Both groups of people leave bad reviews for this, which is frustrating, also because there are already enough bad reviews for the wrong reasons
+(email server problems, which unfortunately happen too often, etc.).
+The main problem is that more features now make more people unhappy than happy.
+Therefore, [the rules for new features](https://m66b.github.io/FairEmail/#get-support) will be strictly followed from today.
+
+No worries, the app will [continue to be maintained](https://github.com/M66B/FairEmail/commits/) and supported as usual.
 
 <br>
 
@@ -22,32 +24,29 @@ The security audit revealed no problems, so Google accounts [can continue to be 
 
 <br>
 
-People keep asking me to add new, often exotic, features to the app, to whom I often say "no", and other people complain about too many features.
-Both groups of people leave bad reviews for this, which is frustrating, also because there are already enough bad reviews for the wrong reasons
-(email server problems, which unfortunately happen too often, etc.).
-The main problem is that more features now make more people unhappy than happy.
-Therefore, [the rules for new features](https://m66b.github.io/FairEmail/#get-support) will be strictly followed from today.
-
-No worries, the app will [continue to be maintained](https://github.com/M66B/FairEmail/commits/) and supported as usual.
-
-<br>
-
 For support you can use [the contact form](https://contact.faircode.eu/?product=fairemailsupport).
-
-<br>
 
 ### [Ceratonykus](https://en.wikipedia.org/wiki/Ceratonykus)
 
-### Next version
+### 1.2270 2025-03-31
 
-* Added optional TTS button
-* Added TTS notification action
+* Fixed widgets for some Android variants
+* Small improvements and minor bug fixes
+* Updated [Public Suffix List](https://github.com/publicsuffix/list)
+* Updated [translations](https://crowdin.com/project/open-source-email)
+
+### 1.2269 2025-03-27
+
+* Fixed all reported issues
+* Targeting Android 16 Baklava
+* Added optional TTS button / notification action
+* Improved accessibility
 * Small improvements and minor bug fixes
 * Updated [AndroidX](https://developer.android.com/jetpack/androidx/versions/all-channel)
 * Updated [Public Suffix List](https://github.com/publicsuffix/list)
 * Updated [translations](https://crowdin.com/project/open-source-email)
 
-### 1.2268 2025-03-14
+### 1.2268 2025-03-14 *
 
 * Fixed delayed marking read
 * Small improvements and minor bug fixes

@@ -69,6 +69,7 @@ For authorizing:
 * Free.fr, see [question 157](#faq157)
 * Posteo: please check if [additional email account protection](https://posteo.de/en/help/activating-additional-email-account-protection) ([German](https://posteo.de/hilfe/zusaetzlichen-postfachschutz-deaktivieren)) isn't enabled
 * Posteo: not that there is [no spam folder](https://posteo.de/en/help/how-does-the-posteo-spam-filter-work) ([German](https://posteo.de/hilfe/wie-funktioniert-der-posteo-spamfilter))
+* Posteo: if you want to synchronize contacts, please [see here](https://posteo.de/en/help/how-do-i-set-up-synchronisation-of-contacts-with-an-android-address-book)
 * Web.de: please check if [IMAP is enabled](https://hilfe.web.de/pop-imap/imap/imap-serverdaten.html)
 * Web.de: with two factor authentication you'll need to use [an app password](https://web.de/email/sicherheit/zwei-faktor-authentifizierung/)
 * Web.de: if you are missing the spam messages folder, you should enable spam filtering via the website of web.de again
@@ -1100,7 +1101,8 @@ If you use both PGP and S/MIME encryption for the same email address, it might b
 so you can change the encryption method by selecting one of the two identities.
 You can long press an identity in the list of identities (via manual setup in the main setup screen) to copy an identity.
 
-To allow different private keys for the same email address, FairEmail will always let you select a key when there are multiple identities with the same email address for the same account.
+To allow different private keys for the same email address, for example, a key for signing and a key for encryption,
+FairEmail will always let you select a key when there are multiple identities with the same email address for the same account.
 
 Public keys are stored by FairEmail and can be imported when verifying a signature for the first time or via the encryption settings (PEM or DER format).
 
@@ -4588,6 +4590,7 @@ Also, I prefer to do a few things very well, instead of many things only half.
 Moreover, from a security perspective, it is not a good idea to grant many permissions to a single app.
 
 You are advised to use the excellent, open source [DAVx⁵](https://f-droid.org/packages/at.bitfire.davdroid/) app to synchronize/manage your calendars/contacts.
+If you need a CalDAV/CardDAV  server, take a look at [Baïkal](https://sabre.io/baikal/).
 
 If you want to synchronize Outlook contacts and you have access to Google Workspace,
 please [see here](https://support.google.com/a/users/answer/156595) about how you can set up contact syncing.

@@ -3,7 +3,7 @@ apply plugin: 'com.bugsnag.android.gradle'
 apply plugin: 'kotlin-android'
 apply plugin: 'de.undercouch.download'
 
-def getVersionCode = { -> return 2268 }
+def getVersionCode = { -> return 2270 }
 def getRevision = { -> return "b" }
 def getReleaseName = { -> return "Ceratonykus" }
 // https://en.wikipedia.org/wiki/List_of_dinosaur_genera
@@ -22,11 +22,12 @@ android {
     namespace 'eu.faircode.email'
 
     // https://apilevels.com/
+    // https://developer.android.com/studio/releases#api-level-support
     defaultConfig {
         applicationId "eu.faircode.email"
-        compileSdk 35
+        compileSdk 36
         minSdkVersion 21
-        targetSdkVersion 35
+        targetSdkVersion 36
         //targetSdkPreview "VanillaIceCream"
         versionCode getVersionCode()
         versionName "1." + getVersionCode()
@@ -457,7 +458,7 @@ tasks.register('downloadBraveClean', Download) {
     overwrite true
 }
 
-tasks.register('downloadBraveDebouce', Download) {
+tasks.register('downloadBraveDebounce', Download) {
     src "https://raw.githubusercontent.com/brave/adblock-lists/master/brave-lists/debounce.json"
     dest "src/main/assets"
     overwrite true
@@ -555,11 +556,11 @@ dependencies {
     def desugar_version = "2.0.4"
     def startup_version = "1.2.0"
     def annotation_version_experimental = "1.4.1" // 1.5.0-alpha01
-    def core_version = "1.15.0" // 1.16.0-beta01
+    def core_version = "1.15.0" // 1.16.0-rc01
     def appcompat_version = "1.7.0"
     def emoji_version = "1.5.0"
     def flatbuffers_version = "2.0.0"
-    def activity_version = "1.10.0" // 1.11.0-alpha01
+    def activity_version = "1.10.0" // 1.11.0-alpha02
     def fragment_version = "1.8.6"
     def windows_version = "1.3.0" // 1.4.0-rc01/1.5.0-alpha01
     def webkit_version = "1.13.0"
@@ -572,16 +573,16 @@ dependencies {
     def lbm_version = "1.1.0"
     def swiperefresh_version = "1.2.0-beta01"
     def documentfile_version = "1.1.0-alpha01"
-    def lifecycle_version = "2.8.6" // 2.8.7/2.9.0-alpha12
+    def lifecycle_version = "2.8.6" // 2.8.7/2.9.0-alpha13
     def lifecycle_extensions_version = "2.2.0"
-    def room_version = "2.4.3" // 2.5.2/2.6.1/2.7.0-rc02
-    def sqlite_version = "2.4.0" // 2.5.0-rc02
+    def room_version = "2.4.3" // 2.5.2/2.6.1/2.7.0-rc03
+    def sqlite_version = "2.4.0" // 2.5.0-rc03
     def requery_version = "3.39.2"
     def paging_version = "2.1.2" // 3.3.6
     def preference_version = "1.2.1"
     def work_version = "2.10.0"
     def exif_version = "1.4.0-rc01"
-    def biometric_version = "1.2.0-alpha05" // 1.4.0-alpha02
+    def biometric_version = "1.2.0-alpha05" // 1.4.0-alpha03
     def billingclient_version = "6.0.1" // 6.2.0
     def playservicesbasement_version = "18.5.0";
     def transparency_version = "2.5.73"
