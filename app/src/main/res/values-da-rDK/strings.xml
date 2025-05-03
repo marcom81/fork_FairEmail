@@ -162,7 +162,7 @@
     <string name="title_setup_intro">Kontoopsætning udgør kun tre trin, hvorefter e-mails kan afsendes og modtages</string>
     <string name="title_setup_simple">Ingen grund til at ændre valgmuligheder</string>
     <string name="title_setup_issue">FairEmail er udviklet for at hjælpe dig med at beskytte din fortrolighed og repræsenterer bogstaveligt talt tusindvis af arbejdstimer. Oplever du problemer, så kontakt mig først mhp. support, inden du giver en dårlig bedømmelse. Jeg vil med glæde hjælpe!</string>
-    <string name="title_setup_analytics">FairEmail viser ikke annoncer eller sporer/analyserer brugeradfærd. Bugsnag bruges til fejlrapportering og er som standard deaktiveret.</string>
+    <string name="title_setup_analytics" comment="title_setup_analytics&#10;Notice text in the welcome section of the main settings screen.&#10;The remark about Bugsnag was removed because Bugsnag was removed.">FairEmail viser ikke annoncer og sporer eller analyserer ikke brugerens adfærd.</string>
     <string name="title_setup_quick_accounts">Tilføj eller skift konti</string>
     <string name="title_setup_quick_support">Visse udbydere besværliggør kontotilføjelse. Bebrejd venligst ikke FairEmail for dette, men anmod i stedet om support.</string>
     <string name="title_setup_quick_hint">Den angivne e-mailadresse bruges til indhentning af opsætningsoplysninger fra e-mailserveren og autoconfig.thunderbird.net</string>
@@ -540,7 +540,7 @@
     <string name="title_advanced_indentation">Venstre-/-højreindryk modtagne/sendte beskeder i samtaler</string>
     <string name="title_advanced_highlight_unread">Fremhæv ulæste beskeder</string>
     <string name="title_advanced_account_color">Vis en farvestribe eller farveprik</string>
-    <string name="title_advanced_color_stripe_wide">Benyt bred farvestribe</string>
+    <string name="title_advanced_account_color_size">Farvestribebredde</string>
     <string name="title_advanced_avatars">Vis kontaktfotos</string>
     <string name="title_advanced_bimi">Vis Brand Indicators for Message Identification (BIMI)</string>
     <string name="title_advanced_bimi_vmc">Kræv gyldigt VMC-certifikat</string>
@@ -688,7 +688,7 @@
     <string name="title_advanced_notify_suppress_in_call">Udsæt notifikationer under opkald</string>
     <string name="title_advanced_notify_suppress_in_car">Udsæt notifikationer, mens Android Auto er tilsluttet</string>
     <string name="title_advanced_notify_summary">Vis kun resuménotifikationer</string>
-    <string name="title_advanced_notify_subject" comment="title_advanced_notify_subject&#10;Title for option switch in the notification settings tab page">Vis emne i notifikationer</string>
+    <string name="title_advanced_notify_subject">Vis emne i notifikationer</string>
     <string name="title_advanced_notify_preview">Beskedforhåndsvisning i notifikationer</string>
     <string name="title_advanced_notify_preview_all">Forhåndsvis al tekst</string>
     <string name="title_advanced_notify_preview_only">Vis kun notifikationer med en forhåndsvisningstekst</string>
@@ -1179,6 +1179,7 @@
     <string name="title_hint_operations">Sletning af handlinger kan resultere i forsvundne beskeder og synkroniseringsproblemer</string>
     <string name="title_op_title_headers">Downloader overskrifter</string>
     <string name="title_op_title_raw">Downloader besked i råformat</string>
+    <string name="title_op_title_add">Uploader besked</string>
     <string name="title_folder_name">Mappenavn</string>
     <string name="title_display_name">Visningsnavn</string>
     <string name="title_show_folders">Vis skjulte mapper</string>
@@ -1246,8 +1247,6 @@
     <string name="title_sent_to">Sendte besked til %1$s</string>
     <string name="title_subject_reply">Sv: %1$s</string>
     <string name="title_subject_forward">Vs: %1$s</string>
-    <string name="title_subject_reply_alt">Sv: %1$s</string>
-    <string name="title_subject_forward_alt">Vs: %1$s</string>
     <string name="title_seen">Markér som læst</string>
     <string name="title_unseen">Markér som ulæst</string>
     <string name="title_seen_unseen">Markér som læst/ulæst</string>
@@ -2382,6 +2381,11 @@
         <item>Ingen</item>
         <item>Stribe</item>
         <item>Prik</item>
+    </string-array>
+    <string-array name="accountColorSizes">
+        <item>Smal</item>
+        <item>Mellem</item>
+        <item>Bred</item>
     </string-array>
     <string-array name="contactTypes">
         <item>Modtager</item>

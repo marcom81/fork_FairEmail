@@ -191,7 +191,7 @@
     <string name="title_setup_intro">Налаштування облікового запису займе лише три кроки, і після цього ви зможете відправляти та отримувати листи</string>
     <string name="title_setup_simple">Нема потреби змінювати будь-які інші параметри</string>
     <string name="title_setup_issue">FairEmail створено для захисту ваших особистих даних, на його розробку було витрачено тисячі годин роботи. Якщо у вас виникнуть проблеми з додатком, перш ніж залишити поганий відгук, зв\'яжіться, будь ласка, зі мною. Буду радий допомогти!</string>
-    <string name="title_setup_analytics">FairEmail не показує рекламу і не відстежує та не аналізує вашу поведінку. Для звітування про помилки використовується Bugsnag, що вимкнено за замовчуванням.</string>
+    <string name="title_setup_analytics" comment="title_setup_analytics&#10;Notice text in the welcome section of the main settings screen.&#10;The remark about Bugsnag was removed because Bugsnag was removed.">FairEmail не показує рекламу, не відстежує та не аналізує вашу поведінку.</string>
     <string name="title_setup_quick_accounts">Додавання/зміна облікових записів</string>
     <string name="title_setup_quick_support">Деякі провайдери ускладнюють додавання рахунку. Будь ласка, не звинувачуйте у цьому Fairemail, а попросіть допомогу у Вашій службі підтримки.</string>
     <string name="title_setup_quick_hint">Введена адреса електронної пошти використовується для запиту на сервер електронної пошти та для запиту конфігураційної інформації з autoconfig.thunderbird.net</string>
@@ -568,7 +568,7 @@
     <string name="title_advanced_indentation">Відступати ліворуч чи праворуч для отриманих або надісланих повідомлень у розмовах</string>
     <string name="title_advanced_highlight_unread">Підсвічувати непрочитані повідомлення</string>
     <string name="title_advanced_account_color">Показувати кольорову смугу або кольорову крапку</string>
-    <string name="title_advanced_color_stripe_wide">Використовувати широку кольорову смугу</string>
+    <string name="title_advanced_account_color_size">Ширина кольорової смуги</string>
     <string name="title_advanced_avatars">Показувати фото контактів</string>
     <string name="title_advanced_bimi">Показувати індикатори брендів для ідентифікації повідомлень (BIMI)</string>
     <string name="title_advanced_bimi_vmc">Вимагати чинного сертифіката VMC</string>
@@ -716,7 +716,7 @@
     <string name="title_advanced_notify_suppress_in_call">Відкладати сповіщення під час розмови</string>
     <string name="title_advanced_notify_suppress_in_car">Затримувати сповіщення, допоки наявне підключення до Android Auto</string>
     <string name="title_advanced_notify_summary">Показувати лише підсумкове сповіщення</string>
-    <string name="title_advanced_notify_subject" comment="title_advanced_notify_subject&#10;Title for option switch in the notification settings tab page">Показувати тему в сповіщеннях</string>
+    <string name="title_advanced_notify_subject">Показувати тему в сповіщеннях</string>
     <string name="title_advanced_notify_preview">Показувати попередній перегляд повідомлення у сповіщеннях</string>
     <string name="title_advanced_notify_preview_all">Попередній перегляд всього тексту</string>
     <string name="title_advanced_notify_preview_only">Показувати сповіщення тільки з попереднім переглядом тексту</string>
@@ -1205,6 +1205,7 @@
     <string name="title_hint_operations">Видалення операцій може призвести до зникнення повідомлень та проблем з синхронізацією</string>
     <string name="title_op_title_headers">Завантаження заголовків</string>
     <string name="title_op_title_raw">Завантаження raw-повідомлень</string>
+    <string name="title_op_title_add">Надсилання повідомлення</string>
     <string name="title_folder_name">Ім\'я теки</string>
     <string name="title_display_name">Показувати ім\'я</string>
     <string name="title_show_folders">Показувати приховані теки</string>
@@ -2409,6 +2410,11 @@
         <item>Нічого</item>
         <item>Смуга</item>
         <item>Крапка</item>
+    </string-array>
+    <string-array name="accountColorSizes">
+        <item>Вузька</item>
+        <item>Середня</item>
+        <item>Широка</item>
     </string-array>
     <string-array name="contactTypes">
         <item>Одержувач</item>

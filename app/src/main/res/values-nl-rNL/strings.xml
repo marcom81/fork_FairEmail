@@ -161,7 +161,7 @@ Het blokkeren van een afzenderdomein maakt gebruik van filterregels, wat een pro
     <string name="title_setup_intro">Het instellen van een account is slechts drie stappen en daarna kunt u e-mails verzenden en ontvangen</string>
     <string name="title_setup_simple">Het is niet nodig om enige andere opties te wijzigen</string>
     <string name="title_setup_issue">FairEmail is ontwikkeld om u te helpen uw privacy te beschermen en vertegenwoordigt letterlijk duizenden uren werk. Als u problemen ondervindt, neem dan eerst contact met mij op voor ondersteuning voordat u een slechte beoordeling achterlaat. Ik help graag!</string>
-    <string name="title_setup_analytics">FairEmail toont geen advertenties en volgt of analyseert uw gedrag niet. Bugsnag wordt gebruikt voor foutrapportage en is standaard uitgeschakeld.</string>
+    <string name="title_setup_analytics" comment="title_setup_analytics&#10;Notice text in the welcome section of the main settings screen.&#10;The remark about Bugsnag was removed because Bugsnag was removed.">FairEmail toont geen advertenties en volgt of analyseert uw gedrag niet.</string>
     <string name="title_setup_quick_accounts">Accounts toevoegen of wijzigen</string>
     <string name="title_setup_quick_support">Sommige providers maken het moeilijk om een account toe te voegen. Geef a.u.b. FairEmail hiervoor niet de schuld, maar vraag om ondersteuning.</string>
     <string name="title_setup_quick_hint">Het ingevoerde mailadres wordt gebruikt om de mailserver en autoconfig.thunderbird.net om configuratie-informatie te vragen</string>
@@ -535,7 +535,7 @@ Het blokkeren van een afzenderdomein maakt gebruik van filterregels, wat een pro
     <string name="title_advanced_indentation">Links/rechts inspringen van ontvangen/verzonden berichten in gesprekken</string>
     <string name="title_advanced_highlight_unread">Ongelezen berichten markeren</string>
     <string name="title_advanced_account_color">Een kleurenstreep of kleurstip weergeven</string>
-    <string name="title_advanced_color_stripe_wide">Gebruik brede kleurenstreep</string>
+    <string name="title_advanced_account_color_size">Breedte kleurstreep</string>
     <string name="title_advanced_avatars">Toon foto\'s contacten</string>
     <string name="title_advanced_bimi">Toon Brand Indicators for Message Identification (BIMI)</string>
     <string name="title_advanced_bimi_vmc">Vereis een geldig VMC-certificaat</string>
@@ -683,7 +683,7 @@ Het blokkeren van een afzenderdomein maakt gebruik van filterregels, wat een pro
     <string name="title_advanced_notify_suppress_in_call">Meldingen uitstellen tijdens een gesprek</string>
     <string name="title_advanced_notify_suppress_in_car">Meldingen uitstellen als Android Auto is verbonden</string>
     <string name="title_advanced_notify_summary">Toon alleen melding met een samenvatting</string>
-    <string name="title_advanced_notify_subject" comment="title_advanced_notify_subject&#10;Title for option switch in the notification settings tab page">Toon onderwerp in meldingen</string>
+    <string name="title_advanced_notify_subject">Toon onderwerp in meldingen</string>
     <string name="title_advanced_notify_preview">Toon berichtvoorbeeld in meldingen</string>
     <string name="title_advanced_notify_preview_all">Voorbeeld van alle tekst</string>
     <string name="title_advanced_notify_preview_only">Alleen meldingen met een voorbeeldtekst weergeven</string>
@@ -1170,6 +1170,7 @@ Het blokkeren van een afzenderdomein maakt gebruik van filterregels, wat een pro
     <string name="title_hint_operations">Verwijderen van bewerkingen kan leiden tot het verdwijnen van berichten en synchronisatieproblemen</string>
     <string name="title_op_title_headers">Headers downloaden</string>
     <string name="title_op_title_raw">Ruw bericht downloaden</string>
+    <string name="title_op_title_add">Uploaden van bericht</string>
     <string name="title_folder_name">Mapnaam</string>
     <string name="title_display_name">Weergavenaam</string>
     <string name="title_show_folders">Toon verborgen mappen</string>
@@ -1269,6 +1270,7 @@ Het blokkeren van een afzenderdomein maakt gebruik van filterregels, wat een pro
     <string name="title_rename">Hernoemen</string>
     <string name="title_share">Delen</string>
     <string name="title_analyze">Analyseer</string>
+    <string name="title_share_link">Deel link</string>
     <string name="title_event">Toevoegen aan agenda</string>
     <string name="title_pin">Snelkoppeling toevoegen</string>
     <string name="title_pin_label">Snelkoppeling titel</string>
@@ -2363,6 +2365,11 @@ Het blokkeren van een afzenderdomein maakt gebruik van filterregels, wat een pro
         <item>Geen</item>
         <item>Streep</item>
         <item>Stip</item>
+    </string-array>
+    <string-array name="accountColorSizes">
+        <item>Smal</item>
+        <item>Middelgroot</item>
+        <item>Breed</item>
     </string-array>
     <string-array name="contactTypes">
         <item>Ontvanger</item>

@@ -162,7 +162,7 @@
     <string name="title_setup_intro">Η ρύθμιση ενός λογαριασμού αποτελείται από τρία μόνο βήματα και μετά μπορείτε να στέλνετε και να λαμβάνετε μηνύματα ηλ. ταχυδρομείου</string>
     <string name="title_setup_simple">Δεν χρειάζεται να αλλάξετε άλλες επιλογές</string>
     <string name="title_setup_issue">Το FairEmail αναπτύχθηκε για να προστατεύσει το ιδιωτικό σας απόρρητο και αντιπροσωπεύει, κυριολεκτικά, χιλιάδες ώρες εργασίας. Αν αντιμετωπίζετε οποιοδήποτε πρόβλημα, παρακαλώ, επικοινωνήστε πρώτα μαζί μου για υποστήριξη, προτού γράψετε μια αρνητική κριτική. Θα χαρώ να σας βοηθήσω!</string>
-    <string name="title_setup_analytics">Το FairEmail δεν προβάλλει διαφημίσεις και δεν παρακολουθεί ή αναλύει τη συμπεριφορά σας. Το Bugsnag χρησιμοποιείται για την αναφορά σφαλμάτων και είναι απενεργοποιημένο από προεπιλογή.</string>
+    <string name="title_setup_analytics" comment="title_setup_analytics&#10;Notice text in the welcome section of the main settings screen.&#10;The remark about Bugsnag was removed because Bugsnag was removed.">Το FairEmail δεν προβάλλει διαφημίσεις και δεν παρακολουθεί ούτε αναλύει τη συμπεριφορά σας.</string>
     <string name="title_setup_quick_accounts">Προσθήκη ή αλλαγή λογαριασμών</string>
     <string name="title_setup_quick_support">Ορισμένοι πάροχοι δυσχεραίνουν την προσθήκη ενός λογαριασμού. Παρακαλούμε, μην κατηγορείτε το FairEmail για αυτό, αλλά δοκιμάστε να λάβετε υποστήριξη.</string>
     <string name="title_setup_quick_hint">Η εισαγόμενη διεύθυνση ηλ. ταχυδρομείου χρησιμοποιείται για να αναζητηθούν πληροφορίες ρύθμισης από τον διακομιστή ηλ. ταχυδρομείου και το autoconfig.thunderbird.net</string>
@@ -202,6 +202,10 @@
     <string name="title_setup_office_auth">Το σφάλμα \'ΠΙΣΤΟΠΟΙΗΣΗ απέτυχε\' μπορεί να προκληθεί επειδή το IMAP/SMTP έχει απενεργοποιηθεί από το διαχειριστή του συστήματος</string>
     <string name="title_setup_office_auth_5_7_3">Παρακαλώ, δοκιμάστε τον οδηγό γρήγορης ρύθμισης: \"Άλλος πάροχος\".</string>
     <string name="title_setup_office_auth_5_7_139">Παρακαλώ, δοκιμάστε τον οδηγό γρήγορης ρύθμισης του Outlook/Hotmail/Live.</string>
+    <string name="title_setup_office_not_connected">        Το σφάλμα \'User is authenticated but not connected\' συνήθως εμφανίζεται όταν το πρωτόκολλο IMAP είναι απενεργοποιημένο για το συγκεκριμένο λογαριασμό αλληλογραφίας.
+        Αν πρόκειται για λογαριασμό Outlook τελικού χρήστη, παρακαλώ μεταβείτε στην ιστοσελίδα του Outlook, μεταβείτε στις ρυθμίσεις πάνω δεξιά, μεταβείτε στη κατηγορία \'Mail\' επιλέξτε \'Forwarding and IMAP\' και στην ενότητα \'POP και IMAP\' ενεργοποιήστε την επιλογή \'Let devices and apps use IMAP\'.
+        Στην περίπτωση εταιρικού, εκπαιδευτικού κλπ λογαριαμου, παρακαλώ επικοινωνήστε με το διαχειριστή του οργανισμού σας για πληροφορίες σχετικά με την ενεργοποίηση του IMAP.
+    </string>
     <string name="title_setup_oauth_rationale">Παραχωρήστε πρόσβαση στον λογαριασμό σας %1$s</string>
     <string name="title_setup_oauth_update">Εκ νέου εξουσιοδότηση ενός ήδη υπάρχοντος λογαριασμού (διαφορετικά, δημιουργήστε έναν καινούργιο λογαριασμό)</string>
     <string name="title_setup_oauth_updated">Η εξουσιοδότηση λογαριασμού ενημερώθηκε</string>
@@ -535,7 +539,7 @@
     <string name="title_advanced_indentation">Αριστερή/δεξιά εσοχή ειλημμένων/απεσταλμένων μηνυμάτων στις συζητήσεις</string>
     <string name="title_advanced_highlight_unread">Να επισημαίνονται τα μη αναγνωσμένα μηνύματα</string>
     <string name="title_advanced_account_color">Προβολή μιας χρωματιστής λωρίδας ή μιας χρωματιστής κουκκίδας</string>
-    <string name="title_advanced_color_stripe_wide">Χρήση φαρδιάς λωρίδας χρώματος</string>
+    <string name="title_advanced_account_color_size">Πλάτος της λωρίδας χρώματος</string>
     <string name="title_advanced_avatars">Προβολή φωτογραφιών επαφών</string>
     <string name="title_advanced_bimi">Προβολή των Brand Indicators for Message Identification (BIMI)</string>
     <string name="title_advanced_bimi_vmc">Να απαιτείται έγκυρο πιστοποιητικό VMC</string>
@@ -683,7 +687,7 @@
     <string name="title_advanced_notify_suppress_in_call">Αναβολή ειδοποιήσεων κατά τη διάρκεια μιας κλήσης</string>
     <string name="title_advanced_notify_suppress_in_car">Αναβολή ειδοποιήσεων ενόσω το Android Auto είναι συνδεδεμένο</string>
     <string name="title_advanced_notify_summary">Προβολή μόνο μιας συνοπτικής ειδοποίησης</string>
-    <string name="title_advanced_notify_subject" comment="title_advanced_notify_subject&#10;Title for option switch in the notification settings tab page">Προβολή θέματος στις ειδοποιήσεις</string>
+    <string name="title_advanced_notify_subject">Προβολή θέματος στις ειδοποιήσεις</string>
     <string name="title_advanced_notify_preview">Προβολή μιας προεπισκόπησης του μηνύματος στις ειδοποιήσεις</string>
     <string name="title_advanced_notify_preview_all">Προεπισκόπηση ολόκληρου του κειμένου</string>
     <string name="title_advanced_notify_preview_only">Προβολή ειδοποιήσεων μόνο με ένα κείμενο προεπισκόπησης</string>
@@ -1171,6 +1175,7 @@
     <string name="title_hint_operations">Η διαγραφή των δραστηριοτήτων μπορεί να οδηγήσει σε εξαφανισμένα μηνύματα και προβλήματα συγχρονισμού</string>
     <string name="title_op_title_headers">Λήψη κεφαλίδων</string>
     <string name="title_op_title_raw">Λήψη αρχικού μηνύματος</string>
+    <string name="title_op_title_add">Μεταφόρτωση μηνύματος</string>
     <string name="title_folder_name">Όνομα φακέλου</string>
     <string name="title_display_name">Προβαλλόμενο όνομα</string>
     <string name="title_show_folders">Εμφάνιση κρυμμένων φακέλων</string>
@@ -2372,6 +2377,11 @@
         <item>Καμία</item>
         <item>Λωρίδα</item>
         <item>Κουκκίδα</item>
+    </string-array>
+    <string-array name="accountColorSizes">
+        <item>Στενή</item>
+        <item>Μεσαίο</item>
+        <item>Φαρδιά</item>
     </string-array>
     <string-array name="contactTypes">
         <item>Παραλήπτης</item>

@@ -121,7 +121,7 @@
 <li>Load more messages: long press a folder in the folder list, select <em>Fetch more messages</em></li>
 <li>Delete a message, skipping trash: long press the trash icon</li>
 <li>Delete an account/identity: (Main) Settings, tap Manual setup, tap Accounts/Identities, tap the account/identity, tap the trash icon in the top right corner</li>
-<li>Delete a folder: long press the folder in the folder list, Edit properties, tap the trash icon in the top right corner</li>
+<li>Delete a folder: long press the folder in the folder list, Edit properties, tap the trash icon in the top right corner. Note that you can’t delete folders which still have sub folders.</li>
 <li>Undo send: Outbox, swipe the message in the list left or right</li>
 <li>Delete a contact: please <a href="#faq171">see this FAQ</a></li>
 <li>Store sent messages in the inbox: please <a href="#faq142">see this FAQ</a></li>
@@ -323,7 +323,7 @@
 <li><a href="#faq101">(101) What does the blue/orange dot at the bottom of the conversations mean?</a></li>
 <li><a href="#faq102">(102) How can I enable auto rotation of images?</a></li>
 <li><a href="#faq158">(103) How can I record audio?</a></li>
-<li><a href="#faq104">(104) What do I need to know about error reporting?</a></li>
+<li><a href="#faq104"><del>(104) What do I need to know about error reporting?</del></a></li>
 <li><a href="#faq105">(105) How does the roam-like-at-home option work?</a></li>
 <li><a href="#faq106">(106) Which launchers can show a badge count with the number of unread messages?</a></li>
 <li><a href="#faq107">(107) How do I use colored stars?</a></li>
@@ -427,6 +427,7 @@
 <li><a href="#faq205">(205) How do I check the integrity of an APK file?</a></li>
 <li><a href="#faq206">(206) How can I move or copy messages from one account to another?</a></li>
 <li><a href="#faq207">(207) What does ‘Authentication failed’ mean?</a></li>
+<li><a href="#faq208">(208) What does ‘about:blank#blocked’ mean when I click on a link?</a></li>
 </ul>
 <p><a href="#get-support">I have another question.</a></p>
 <p><a name="faq1"></a> <strong>(1) Which permissions are needed and why?</strong></p>
@@ -2032,8 +2033,9 @@ category:promotions</code></pre>
 <p>Images will automatically be rotated when automatic resizing of images is enabled in the settings (enabled by default). However, automatic rotating depends on the <a href="https://en.wikipedia.org/wiki/Exif">Exif</a> information to be present and to be correct, which is not always the case. Particularly not when taking a photo with a camara app from FairEmail.</p>
 <p>Note that only <a href="https://en.wikipedia.org/wiki/JPEG">JPEG</a> and <a href="https://en.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a> images can contain Exif information.</p>
 <p><br /></p>
-<p><a name="faq104"></a> <strong>(104) What do I need to know about error reporting?</strong></p>
+<p><a name="faq104"></a> <strong><del>(104) What do I need to know about error reporting?</del></strong></p>
 <p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq104">Google Translate</a></p>
+<p>Error reporting with Bugsnag was removed in version 1.2273.</p>
 <ul>
 <li>Error reports will help improve FairEmail</li>
 <li>Error reporting is optional and opt-in</li>
@@ -3158,6 +3160,12 @@ adb install /path/to/FairEmail-xxx.apk</code></pre>
 <p>You can try to switch to Wi-Fi or mobile data because this will result in using another (local) network address. Turning flight mode on for a while and turning it back off will mostly result in another network address being assigned. So, this is worth trying as well.</p>
 <p>Email providers like Google, Microsoft, and Yahoo/AOL require <a href="https://en.wikipedia.org/wiki/OAuth">OAuth</a> for logging in, which means it is not possible to configure an account manually, and that you <em>must</em> use the quick setup wizard to configure an account.</p>
 <p>Some email providers use account-specific host (server) names. So, please take care you use the correct host name when manually configuring an account.</p>
+<p><br></p>
+<p><a name="faq208"></a> <strong>(208) What does ‘about:blank#blocked’ mean when I click on a link?</strong></p>
+<p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq208">Google Translate</a></p>
+<p>If you get ‘<em>about:blank#blocked</em>’ when you click on a link, for some reason the installed browser has blocked the link.</p>
+<p>Note that the original message view is displayed by the installed browser. It may look like it’s part of the app, but it’s not.</p>
+<p>You can probably workaround this by switching back to the reformatted message view via the ‘] [’ button just above the message text on the right.</p>
 <p><br></p>
 <h2>
 <a name="get-support"></a>Get support

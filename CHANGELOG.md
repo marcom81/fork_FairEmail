@@ -20,13 +20,41 @@ Besides being time-consuming, this is no longer free as of this year.
 This is one of the reasons why the app cannot be completely free, meaning some features must be paid for in order to pay for an annual security audit.
 To be clear, nothing will be changed for now.
 
-The security audit revealed no problems, so Google accounts [can continue to be used](https://support.google.com/cloud/answer/13464325) as usual next year.
+The security audit revealed no problems, so Google accounts [can continue to be used](https://support.google.com/cloud/answer/13464325) as usual for a year.
 
 <br>
 
 For support you can use [the contact form](https://contact.faircode.eu/?product=fairemailsupport).
 
 ### [Ceratonykus](https://en.wikipedia.org/wiki/Ceratonykus)
+
+### 1.2274 2025-04-24
+
+* Small improvements and minor bug fixes
+* Updated [AndroidX](https://developer.android.com/jetpack/androidx/versions/all-channel)
+* Updated [Public Suffix List](https://github.com/publicsuffix/list)
+* Updated [translations](https://crowdin.com/project/open-source-email)
+
+### 1.2273 2025-04-23
+
+* Removed Bugsnag
+* Small improvements and minor bug fixes
+* Updated [AndroidX](https://developer.android.com/jetpack/androidx/versions/all-channel)
+* Updated [Public Suffix List](https://github.com/publicsuffix/list)
+* Updated [translations](https://crowdin.com/project/open-source-email)
+
+### 1.2272 2025-04-08 *
+
+* Fixed back gestures for Hyper OS
+* Small improvements and minor bug fixes
+* Updated [translations](https://crowdin.com/project/open-source-email)
+
+### 1.2271 2025-04-08
+
+* Added option for narrow color stripes
+* Small improvements and minor bug fixes
+* Updated [Public Suffix List](https://github.com/publicsuffix/list)
+* Updated [translations](https://crowdin.com/project/open-source-email)
 
 ### 1.2270 2025-03-31
 

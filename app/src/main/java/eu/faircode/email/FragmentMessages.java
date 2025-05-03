@@ -229,6 +229,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Properties;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.function.Consumer;
 
@@ -402,12 +403,13 @@ public class FragmentMessages extends FragmentBase
     private Long lastSync = null;
 
     private Integer lastUnseen;
+    private Integer lastUnified;
     private Boolean lastRefreshing;
     private Boolean lastFolderErrors;
     private Boolean lastAccountErrors;
 
-    final private Map<String, String> kv = new HashMap<>();
-    final private Map<String, List<Long>> values = new HashMap<>();
+    final private Map<String, String> kv = new ConcurrentHashMap<>();
+    final private Map<String, List<Long>> values = new ConcurrentHashMap<>();
     final private LongSparseArray<Float> sizes = new LongSparseArray<>();
     final private LongSparseArray<Integer> heights = new LongSparseArray<>();
     final private LongSparseArray<Pair<Integer, Integer>> positions = new LongSparseArray<>();
@@ -5575,9 +5577,15 @@ public class FragmentMessages extends FragmentBase
         outState.putInt("fair:autoCloseCount", autoCloseCount);
         outState.putInt("fair:lastSentCount", lastSentCount);
 
-        outState.putStringArray("fair:values", values.keySet().toArray(new String[0]));
-        for (String name : values.keySet())
-            outState.putLongArray("fair:name:" + name, Helper.toLongArray(values.get(name)));
+        List<String> keys = new ArrayList<>();
+        for (String name : values.keySet()) {
+            List<Long> ids = values.get(name);
+            if (ids != null) {
+                keys.add(name);
+                outState.putLongArray("fair:name:" + name, Helper.toLongArray(ids));
+            }
+        }
+        outState.putStringArray("fair:values", keys.toArray(new String[0]));
 
         if (rvMessage != null) {
             Parcelable rv = rvMessage.getLayoutManager().onSaveInstanceState();
@@ -6053,7 +6061,7 @@ public class FragmentMessages extends FragmentBase
     }
 
     private boolean checkReporting() {
-        if (viewType != AdapterMessage.ViewType.UNIFIED)
+        if (viewType != AdapterMessage.ViewType.UNIFIED || true)
             return false;
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -6402,6 +6410,7 @@ public class FragmentMessages extends FragmentBase
             int zoom = prefs.getInt("view_zoom", compact ? 0 : 1);
             int padding = prefs.getInt("view_padding", compact || !cards ? 0 : 1);
             boolean quick_filter = prefs.getBoolean("quick_filter", false);
+            boolean all_read_asked = prefs.getBoolean("all_read_asked", false);
 
             boolean folder =
                     (viewType == AdapterMessage.ViewType.UNIFIED ||
@@ -6537,7 +6546,9 @@ public class FragmentMessages extends FragmentBase
 
             menu.findItem(R.id.menu_select_all).setVisible(folder);
             menu.findItem(R.id.menu_select_found).setVisible(viewType == AdapterMessage.ViewType.SEARCH);
-            menu.findItem(R.id.menu_mark_all_read).setVisible(folder);
+            menu.findItem(R.id.menu_mark_all_read)
+                    .setVisible(folder)
+                    .setShowAsAction(all_read_asked ? MenuItem.SHOW_AS_ACTION_NEVER : MenuItem.SHOW_AS_ACTION_IF_ROOM);
 
             menu.findItem(R.id.menu_view_thread).setVisible(viewType == AdapterMessage.ViewType.THREAD && !threading);
 
@@ -7329,11 +7340,14 @@ public class FragmentMessages extends FragmentBase
 
         // Get state
         int unseen = 0;
+        int unified = 0;
         boolean refreshing = false;
         boolean folderErrors = false;
         boolean accountErrors = false;
         for (TupleFolderEx folder : folders) {
             unseen += folder.unseen;
+            if (folder.unified)
+                unified++;
 
             if (folder.sync_state != null &&
                     !"downloading".equals(folder.sync_state) &&
@@ -7352,6 +7366,7 @@ public class FragmentMessages extends FragmentBase
 
         if (refreshing == swipeRefresh.isRefreshing() &&
                 Objects.equals(lastUnseen, unseen) &&
+                Objects.equals(lastUnified, unified) &&
                 Objects.equals(lastRefreshing, refreshing) &&
                 Objects.equals(lastFolderErrors, folderErrors) &&
                 Objects.equals(lastAccountErrors, accountErrors)) {
@@ -7360,6 +7375,7 @@ public class FragmentMessages extends FragmentBase
         }
 
         lastUnseen = unseen;
+        lastUnified = unified;
         lastRefreshing = refreshing;
         lastFolderErrors = folderErrors;
         lastAccountErrors = accountErrors;
@@ -9931,11 +9947,9 @@ public class FragmentMessages extends FragmentBase
                                             }
                                         }
 
-                                        boolean pep = checkPep(message, remotes, context);
-
                                         encrypt = parts.getEncryption();
                                         db.message().setMessageEncrypt(message.id, encrypt);
-                                        db.message().setMessageRevision(message.id, pep || protect_subject == null ? 1 : -1);
+                                        db.message().setMessageRevision(message.id, protect_subject == null ? 1 : -1);
                                         db.message().setMessageStored(message.id, new Date().getTime());
                                         db.message().setMessageFts(message.id, false);
 
@@ -10228,8 +10242,7 @@ public class FragmentMessages extends FragmentBase
                                     KeyStore ks = null;
                                     try {
                                         // https://tools.ietf.org/html/rfc3852#section-10.2.3
-                                        ks = KeyStore.getInstance("AndroidCAStore");
-                                        ks.load(null, null);
+                                        ks = SmimeHelper.getCAStore(context);
 
                                         // https://docs.oracle.com/javase/7/docs/technotes/guides/security/certpath/CertPathProgGuide.html
                                         X509CertSelector target = new X509CertSelector();
@@ -10739,11 +10752,9 @@ public class FragmentMessages extends FragmentBase
                             }
                     }
 
-                    boolean pep = checkPep(message, remotes, context);
-
                     db.message().setMessageEncrypt(message.id,
                             signedData ? EntityMessage.SMIME_SIGNONLY : parts.getEncryption());
-                    db.message().setMessageRevision(message.id, pep || protect_subject == null ? 1 : -1);
+                    db.message().setMessageRevision(message.id, protect_subject == null ? 1 : -1);
                     db.message().setMessageStored(message.id, new Date().getTime());
                     db.message().setMessageFts(message.id, false);
 
@@ -10783,51 +10794,6 @@ public class FragmentMessages extends FragmentBase
                 return trace;
             }
         }.serial().execute(this, args, "decrypt:s/mime");
-    }
-
-    private static boolean checkPep(EntityMessage message, List<EntityAttachment> remotes, Context context) {
-        DB db = DB.getInstance(context);
-        for (EntityAttachment remote : remotes)
-            if ("message/rfc822".equals(remote.getMimeType()))
-                try {
-                    Properties props = MessageHelper.getSessionProperties(true);
-                    Session isession = Session.getInstance(props, null);
-
-                    MimeMessage imessage;
-                    try (InputStream fis = new FileInputStream(remote.getFile(context))) {
-                        imessage = new MimeMessage(isession, fis);
-                    }
-
-                    String[] xpep = imessage.getHeader("X-pEp-Wrapped-Message-Info");
-                    if (xpep == null || xpep.length == 0 || !"INNER".equalsIgnoreCase(xpep[0]))
-                        continue;
-
-                    MessageHelper helper = new MessageHelper(imessage, context);
-                    String subject = helper.getSubject();
-                    String html = helper.getMessageParts().getHtml(context);
-
-                    if (!TextUtils.isEmpty(html))
-                        Helper.writeText(message.getFile(context), html);
-
-                    try {
-                        db.beginTransaction();
-
-                        if (!TextUtils.isEmpty(subject))
-                            db.message().setMessageSubject(message.id, subject);
-
-                        // Prevent showing the embedded message
-                        db.attachment().setType(remote.id, "application/octet-stream");
-
-                        db.setTransactionSuccessful();
-                    } finally {
-                        db.endTransaction();
-                    }
-
-                    return true;
-                } catch (Throwable ex) {
-                    Log.e(ex);
-                }
-        return false;
     }
 
     private void onDelete(long id) {

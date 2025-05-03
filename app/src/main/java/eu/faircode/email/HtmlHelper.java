@@ -58,7 +58,6 @@ import android.text.style.UnderlineSpan;
 import android.util.Base64;
 import android.util.Patterns;
 import android.view.View;
-import android.view.inputmethod.BaseInputConnection;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -584,16 +583,6 @@ public class HtmlHelper {
             safelist.addAttributes(":all", "x-computed");
 
         final Document document = new Cleaner(safelist).clean(parsed);
-
-        if (BuildConfig.DEBUG)
-            for (Element e : document.select("span:matchesOwn(^UUID: " + Helper.REGEX_UUID + ")")) {
-                String t = e.text();
-                int sp = t.indexOf(' ');
-                if (sp < 0)
-                    continue;
-                String uuid = t.substring(sp + 1);
-                e.html("UUID: <a href='" + BuildConfig.BUGSNAG_URI + uuid + "'>" + uuid + "</a>");
-            }
 
         // Remove tracking pixels
         if (disable_tracking)

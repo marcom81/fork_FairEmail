@@ -190,7 +190,6 @@
     <string name="title_setup_intro">הגדרת חשבון נמצאת במרחק שלושה צעדים ממך ולאחריה ניתן להתחיל לשלוח ולקבל הודעות דוא״ל</string>
     <string name="title_setup_simple">אין צורך לשנות אפשרויות אחרות כלשהן</string>
     <string name="title_setup_issue">‏FairEmail פותח כדי לסייע לך להגן על הפרטיות שלך והוא מגלם בתוכו אלפי שעות עבודה. אם נתקלת בבעיה, נא ליצור אתי קשר תחילה לקבל תמיכה בטרם פרסום סקירה שלילית. אני מאוד שמח לעזור - באנגלית!</string>
-    <string name="title_setup_analytics">‏FairEmail לא מציג פרסומות ולא עוקב אחריך או מנתח את ההתנהגות שלך. Bugsnag משמש לדיווח על שגיאות והוא מושבת כברירת מחדל.</string>
     <string name="title_setup_quick_accounts">הוספה או עריכה של חשבונות</string>
     <string name="title_setup_quick_support">חלק מהספקים מקשים על הוספת חשבון. אין טעם להאשים את FailEmail בכך, אך בהחלט ניתן לבקש תמיכה.</string>
     <string name="title_setup_quick_hint">כתובת הדוא״ל שמולאה משמשת לתשאל את שרת הדוא״ל ואת autoconfig.thunderbird.net לקבלת פרטי הגדרה</string>
@@ -568,7 +567,7 @@
     <string name="title_advanced_indentation">הזחה שמאלית/ימנית להודעות שהתקבלו/נשלחו בדיונים</string>
     <string name="title_advanced_highlight_unread">הדגשת הודעות שלא נקראו</string>
     <string name="title_advanced_account_color">הצגת פס או נקודת צבע</string>
-    <string name="title_advanced_color_stripe_wide">להשתמש בפס צבע רחב</string>
+    <string name="title_advanced_account_color_size">עובי פס צבע</string>
     <string name="title_advanced_avatars">הצגת תמונות אנשי קשר</string>
     <string name="title_advanced_bimi">הצגת בוררי מיתוג לזיהוי הודעה (BIMI)</string>
     <string name="title_advanced_bimi_vmc">לדרוש אישור VMC תקין</string>
@@ -716,7 +715,7 @@
     <string name="title_advanced_notify_suppress_in_call">להשהות התראות בזמן שיחה</string>
     <string name="title_advanced_notify_suppress_in_car">השבתת ההתראות כאשר מחובר ל־Android Auto</string>
     <string name="title_advanced_notify_summary">הצגת התראות תקציר בלבד</string>
-    <string name="title_advanced_notify_subject" comment="title_advanced_notify_subject&#10;Title for option switch in the notification settings tab page">הצגת נושא בהתראות</string>
+    <string name="title_advanced_notify_subject">הצגת נושא בהתראות</string>
     <string name="title_advanced_notify_preview">תצוגה מקדימה של ההודעות בהתראות</string>
     <string name="title_advanced_notify_preview_all">תצוגה מקדימה של כל הטקסט</string>
     <string name="title_advanced_notify_preview_only">הצגת התראות עם תמצית טקסט בלבד</string>
@@ -1206,6 +1205,7 @@
     <string name="title_hint_operations">פעולות מחיקה יכולות לגרום להודעות שנעלמות ולתקלות סנכרון</string>
     <string name="title_op_title_headers">כותרות מתקבלות</string>
     <string name="title_op_title_raw">הודעה גולמית מתקבלת</string>
+    <string name="title_op_title_add">הודעת העלאה</string>
     <string name="title_folder_name">שם תיקייה</string>
     <string name="title_display_name">שם תצוגה</string>
     <string name="title_show_folders">הצגת תיקיות מוסתרות</string>
@@ -2404,6 +2404,11 @@
         <item>בלי</item>
         <item>פס</item>
         <item>נקודה</item>
+    </string-array>
+    <string-array name="accountColorSizes">
+        <item>צר</item>
+        <item>בינוני</item>
+        <item>רחב</item>
     </string-array>
     <string-array name="contactTypes">
         <item>נמען</item>

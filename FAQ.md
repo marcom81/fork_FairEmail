@@ -109,7 +109,7 @@ Related questions:
 * Load more messages: long press a folder in the folder list, select *Fetch more messages*
 * Delete a message, skipping trash: long press the trash icon
 * Delete an account/identity: (Main) Settings, tap Manual setup, tap Accounts/Identities, tap the account/identity, tap the trash icon in the top right corner
-* Delete a folder: long press the folder in the folder list, Edit properties, tap the trash icon in the top right corner
+* Delete a folder: long press the folder in the folder list, Edit properties, tap the trash icon in the top right corner. Note that you can't delete folders which still have sub folders.
 * Undo send: Outbox, swipe the message in the list left or right
 * Delete a contact: please [see this FAQ](#faq171)
 * Store sent messages in the inbox: please [see this FAQ](#faq142)
@@ -334,7 +334,7 @@ Anything on this list is in random order and *might* be added in the near future
 * [(101) What does the blue/orange dot at the bottom of the conversations mean?](#faq101)
 * [(102) How can I enable auto rotation of images?](#faq102)
 * [(103) How can I record audio?](#faq158)
-* [(104) What do I need to know about error reporting?](#faq104)
+* [~~(104) What do I need to know about error reporting?~~](#faq104)
 * [(105) How does the roam-like-at-home option work?](#faq105)
 * [(106) Which launchers can show a badge count with the number of unread messages?](#faq106)
 * [(107) How do I use colored stars?](#faq107)
@@ -438,6 +438,7 @@ Anything on this list is in random order and *might* be added in the near future
 * [(205) How do I check the integrity of an APK file?](#faq205)
 * [(206) How can I move or copy messages from one account to another?](#faq206)
 * [(207) What does 'Authentication failed' mean?](#faq207)
+* [(208) What does 'about:blank#blocked' mean when I click on a link?](#faq208)
 
 [I have another question.](#get-support)
 
@@ -3825,9 +3826,11 @@ Note that only [JPEG](https://en.wikipedia.org/wiki/JPEG) and [PNG](https://en.w
 <br />
 
 <a name="faq104"></a>
-**(104) What do I need to know about error reporting?**
+**~~(104) What do I need to know about error reporting?~~**
 
 &#x1F30E; [Google Translate](https://translate.google.com/translate?sl=en&u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq104)
+
+Error reporting with Bugsnag was removed in version 1.2273.
 
 * Error reports will help improve FairEmail
 * Error reporting is optional and opt-in
@@ -6331,6 +6334,19 @@ which means it is not possible to configure an account manually, and that you *m
 
 Some email providers use account-specific host (server) names.
 So, please take care you use the correct host name when manually configuring an account.
+
+<br>
+
+<a name="faq208"></a>
+**(208) What does 'about:blank#blocked' mean when I click on a link?**
+
+&#x1F30E; [Google Translate](https://translate.google.com/translate?sl=en&u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq208)
+
+If you get '*about:blank#blocked*' when you click on a link, for some reason the installed browser has blocked the link.
+
+Note that the original message view is displayed by the installed browser. It may look like it's part of the app, but it's not.
+
+You can probably workaround this by switching back to the reformatted message view via the '\] \[' button just above the message text on the right.
 
 <br>
 

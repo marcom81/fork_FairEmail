@@ -176,7 +176,7 @@
     <string name="title_setup_intro">Postavljanje računa odvija se u samo tri koraka i nakon toga možete slati i primati e-poštu</string>
     <string name="title_setup_simple">Nije potrebno mijenjati druge opcije</string>
     <string name="title_setup_issue">FairEmail je razvijen kako bi zaštitio vašu privatnost i predstavlja djelo u koje je doslovno uloženo na hiljade sati. Ukoliko imate nekih problema, molim da me prvo kontaktirate za podršku, prije nego ostavite lošu recenziju. Rado ću Vam pomoći!</string>
-    <string name="title_setup_analytics">FairEmail ne prikazuje reklame i ne prati niti analizira Vaše ponašanje. Bugsnag se koristi za prijavljivanje grešaka i isključen je po zadanom.</string>
+    <string name="title_setup_analytics" comment="title_setup_analytics&#10;Notice text in the welcome section of the main settings screen.&#10;The remark about Bugsnag was removed because Bugsnag was removed.">FairEmail ne prikazuje reklame niti prati ili analizira vaše ponašanje.</string>
     <string name="title_setup_quick_accounts">Dodaj ili ukloni račune</string>
     <string name="title_setup_quick_support">Neki provajderi (poslužitelji) otežavaju način za dodavanje računa. Molimo da ne krivite FairEmail zbog toga, nego da zatražite podršku.</string>
     <string name="title_setup_quick_hint">Unesena adresa e-pošte koristi se za slanje upita e-mail serveru i za konfiguracijske informacije s autoconfig.thunderbird.net </string>
@@ -554,7 +554,7 @@
     <string name="title_advanced_indentation">Lijevo/desno poravnanje primljenih/poslanih poruka u konverzacijama</string>
     <string name="title_advanced_highlight_unread">Markiraj nepročitane poruke</string>
     <string name="title_advanced_account_color">Prikaži obojenu traku ili tačku</string>
-    <string name="title_advanced_color_stripe_wide">Koristi široku traku s bojama</string>
+    <string name="title_advanced_account_color_size">Širina obojene trake</string>
     <string name="title_advanced_avatars">Prikaži fotografije kontakata</string>
     <string name="title_advanced_bimi">Brand Indicators for Message Identification (BIMI)</string>
     <string name="title_advanced_bimi_vmc">Zahtjevaj važeći VMC certifikat</string>
@@ -702,7 +702,7 @@
     <string name="title_advanced_notify_suppress_in_call">Odgodi obavještenja tokom poziva</string>
     <string name="title_advanced_notify_suppress_in_car">Odgodi obavještenja kada je spojen Android Auto</string>
     <string name="title_advanced_notify_summary">Prikaži samo obavještenja sa sažetkom</string>
-    <string name="title_advanced_notify_subject" comment="title_advanced_notify_subject&#10;Title for option switch in the notification settings tab page">Prikaži predmet u obavještenjima</string>
+    <string name="title_advanced_notify_subject">Prikaži predmet u obavještenjima</string>
     <string name="title_advanced_notify_preview">Prikaži pregled poruke u obavještenjima</string>
     <string name="title_advanced_notify_preview_all">Prikaz cijelog teksta</string>
     <string name="title_advanced_notify_preview_only">Prikaži obavještenja samo sa pregledom poruka</string>
@@ -1192,6 +1192,7 @@
     <string name="title_hint_operations">Brisanje operacija može prouzrokovati nestanak poruka i probleme sa sinhronizacijom</string>
     <string name="title_op_title_headers">Preuzimanje zaglavlja</string>
     <string name="title_op_title_raw">Preuziamanje raw poruke</string>
+    <string name="title_op_title_add">Prijenos poruke</string>
     <string name="title_folder_name">Naziv foldera</string>
     <string name="title_display_name">Prikazano ime</string>
     <string name="title_show_folders">Prikaži skrivene foldere</string>
@@ -2389,6 +2390,11 @@
         <item>Nijedno</item>
         <item>Traka</item>
         <item>Tačka</item>
+    </string-array>
+    <string-array name="accountColorSizes">
+        <item>Uska</item>
+        <item>Srednji</item>
+        <item>Široka</item>
     </string-array>
     <string-array name="contactTypes">
         <item>Primalac</item>

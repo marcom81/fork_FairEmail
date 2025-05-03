@@ -162,7 +162,7 @@
     <string name="title_setup_intro">Configurare un account richiede solo tre passaggi per poter inviare e ricevere email</string>
     <string name="title_setup_simple">Non serve cambiare altre opzioni</string>
     <string name="title_setup_issue">FairEmail è stata sviluppata per aiutare a proteggere la propria privacy e sono state necessarie letteralmente migliaia di ore di lavoro. Se si riscontrano problemi, contattare lo sviluppatore per supporto prima di lasciare una brutta recensione. Sarà felice di dare una mano!</string>
-    <string name="title_setup_analytics">FairEmail non visualizza annunci e non monitora o analizza il proprio comportamento. Bugsnag è usato per la segnalazione degli errori ed è disabilitato per impostazione predefinita.</string>
+    <string name="title_setup_analytics" comment="title_setup_analytics&#10;Notice text in the welcome section of the main settings screen.&#10;The remark about Bugsnag was removed because Bugsnag was removed.">FairEmail non mostra pubblicità e non traccia né analizza il tuo comportamento.</string>
     <string name="title_setup_quick_accounts">Aggiungere o cambiare gli account</string>
     <string name="title_setup_quick_support">Alcuni provider rendono difficile aggiungere un account. Di questo non è responsabile FairEmail, semmai è necessario chiedere supporto.</string>
     <string name="title_setup_quick_hint">L\'indirizzo email inserito è usato per interrogare il server email e autoconfig.thunderbird.net per le informazioni di configurazione</string>
@@ -540,7 +540,7 @@
     <string name="title_advanced_indentation">Messaggi ricevuti e inviati con rientro a sinistra e destra nelle conversazioni</string>
     <string name="title_advanced_highlight_unread">Evidenzia i messaggi da leggere</string>
     <string name="title_advanced_account_color">Mostra una striscia colorata o un punto colorato</string>
-    <string name="title_advanced_color_stripe_wide">Usa un\'ampia striscia di colore</string>
+    <string name="title_advanced_account_color_size">Spessore della striscia colorata</string>
     <string name="title_advanced_avatars">Mostra le foto di contatto</string>
     <string name="title_advanced_bimi">Mostra il logo del mittente (BIMI, Brand Indicators for Message Identification)</string>
     <string name="title_advanced_bimi_vmc">Richiedi un certificato VMC valido</string>
@@ -688,7 +688,7 @@
     <string name="title_advanced_notify_suppress_in_call">Posticipa le notifiche durante una chiamata</string>
     <string name="title_advanced_notify_suppress_in_car">Posticipa le notifiche mentre Android Auto è connesso</string>
     <string name="title_advanced_notify_summary">Mostra solo le notifiche del riepilogo</string>
-    <string name="title_advanced_notify_subject" comment="title_advanced_notify_subject&#10;Title for option switch in the notification settings tab page">Mostra l\'oggetto nelle notifiche</string>
+    <string name="title_advanced_notify_subject">Mostra l\'oggetto nelle notifiche</string>
     <string name="title_advanced_notify_preview">Mostra l\'anteprima del messaggio nelle notifiche</string>
     <string name="title_advanced_notify_preview_all">Visualizza tutto il testo</string>
     <string name="title_advanced_notify_preview_only">Mostra solo le notifiche con un testo d\'anteprima</string>
@@ -1179,6 +1179,7 @@
     <string name="title_hint_operations">L\'eliminazione delle operazioni può causare la scomparsa dei messaggi e problemi di sincronizzazione</string>
     <string name="title_op_title_headers">Scaricamento delle intestazioni</string>
     <string name="title_op_title_raw">Scaricamento del messaggio grezzo</string>
+    <string name="title_op_title_add">Caricamento del messaggio</string>
     <string name="title_folder_name">Nome della cartella</string>
     <string name="title_display_name">Nome mostrato</string>
     <string name="title_show_folders">Mostra le cartelle nascoste</string>
@@ -2382,6 +2383,11 @@
         <item>Niente</item>
         <item>Striscia</item>
         <item>Punto</item>
+    </string-array>
+    <string-array name="accountColorSizes">
+        <item>Sottile</item>
+        <item>Media</item>
+        <item>Spessa</item>
     </string-array>
     <string-array name="contactTypes">
         <item>Destinatario</item>

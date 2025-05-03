@@ -1,41 +1,41 @@
-# Iestatīšanas palīgs
+# Iestatīšanas palīdzība
 
-Setting up FairEmail is fairly simple. You'll need to add at least one account to receive email and at least one identity if you want to send email. The quick setup will add an account and an identity in one go for most major providers.
+FairEmail iestatīšana ir diezgan vienkārša. Būs nepieciešams pievienot vismaz vienu kontu, lai saņemtu e-pasta ziņojumus, un vismaz viena identitāte, ja ir vēlēšanās nosūtīt e-pasta ziņojumus. Ātrā iestatīšana pievienos kontu un identitāti vienā piegājienā vairumam lielāko pakalpojumu sniedzēju.
 
 ## Prasības
 
-Ir nepieciešams interneta savienojums, lai varētu izveidot kontus un identitātes.
+Ir nepieciešams interneta savienojums, lai varētu iestatīt kontus un identitātes.
 
-## Quick setup
+## Ātrā iestatīšana
 
-Just select the appropriate provider or *Other provider* and enter your name, email address and password and tap *Check*.
+Vienkārši jāatlasa atbilstošais pakalpojumu sniedzējs vai *Cits pakalpojumu sniedzējs* un jāievada savs vārds, e-pasta adrese un parole, un tad jāpiesit *Pārbaudīt*.
 
-This will work for most email providers.
+Tas darbojas ar vairumu e-pasta pakalpojuma sniedzēju.
 
-If the quick setup doesn't work, you'll need to set up an account and an identity manually, see below for instructions.
+Ja ātrā iestatīšana nedarbojas, būs nepieciešams pašrocīgi iestatīt kontu un identitāti, norādes ir atrodamas zemāk.
 
-## Izveidot kontu - lai saņemtu e-pastu
+## Iestatīt kontu - e-pasta saņemšanai
 
-To add an account, tap *Manual setup and more options*, tap *Accounts* and tap the 'plus' button at the bottom and select IMAP (or POP3). Select a provider from the list, enter the username, which is mostly your email address and enter your password. Tap *Check* to let FairEmail connect to the email server and fetch a list of system folders. After reviewing the system folder selection you can add the account by tapping *Save*.
+Lai pievienotu kontu, jāpiesit *Pašrocīga iestatīšana un parējie iestatījumi*, tad *Konti*, tad apakšā esošajai pogai "+" un jāatlasa IMAP (vai POP3). No saraksta jāatlasa pakalpojumu sniedzējs, jāievada lietotājvārds, kas vairumā gadījumu ir e-pasta adrese, un parole. Jāpiesit *Pārbaudīt*, lai ļautu FairEmail pieslēgties e-pasta serverim un iegūt sistēmas mapju sarakstu. Pēc sistēmas mapju atlases pārskatīšanas kontu var pievienot ar piesišanu uz *Saglabāt*.
 
-If your provider is not in the list of providers, there are thousands of providers, select *Custom*. Enter the domain name, for example *gmail.com* and tap *Get settings*. If your provider supports [auto-discovery](https://tools.ietf.org/html/rfc6186), FairEmail will fill in the host name and port number, else check the setup instructions of your provider for the right IMAP host name, port number and encryption protocol (SSL/TLS or STARTTLS). For more about this, please see [here](https://github.com/M66B/FairEmail/blob/master/FAQ.md#authorizing-accounts).
+Ja sarakstā nav vajadzīgā pakalpojumu sniedzēja, jāatlasa *Pielāgots*, ir tūkstošiem pakalpojumu sniedzēju. Jāievada domēna vārds, piemēram, *proton.me* un jāpiesit *Iegūt iestatījumus*. Ja pakalpojumu sniedzējs nodrošina [automātisko atklāšanu](https://tools.ietf.org/html/rfc6186), FairEmail aizpildīs resursdatora nosaukumu un porta numuru, pretējā gadījumā sava pakalpojumu sniedzēja norādēs jāmeklē pareizais IMAP resursdatora nosaukums, porta numurs un šifrēšanas protokols (SSL/TLS vai STARTTLS). Vairāk par to lūgums skatīt [šeit](https://github.com/M66B/FairEmail/blob/master/FAQ.md#authorizing-accounts).
 
-## Izveidot identitāti - lai sūtītu e-pastu
+## Iestatīt identitāti - e-pasta sūtīšanai
 
-Similarly, to add an identity, tap *Manual setup and more options*, tap *Identities* and tap the 'plus' button at the bottom. Enter the name you want to appear in the from address of the emails you send and select a linked account. Tap *Save* to add the identity.
+Līdzīgi kā iepriekš, lai pievienotu identitāti, jāpiesit *Pašrocīga iestatīšana un vairāk iespēju*, tad *Identitātes* un tad apakšā esošajai "+" pogai. Jāievada vārds, kuru parādīt nosūtītāja adresē sevis nosūtītajos e-pasta ziņojumos, un jāatlasa saistītais konts. Jāpiesit *Saglabāt*, lai pievienotu identitāti.
 
-If the account was configured manually, you likely need to configure the identity manually too. Enter the domain name, for example *gmail.com* and tap *Get settings*. If your provider supports [auto-discovery](https://tools.ietf.org/html/rfc6186), FairEmail will fill in the host name and port number, else check the setup instructions of your provider for the right SMTP host name, port number and encryption protocol (SSL/TLS or STARTTLS).
+Ja konts tika pašrocīgi iestatīts, visdrīzāk, ka tas ir jādara arī ar identitāti. Jāievada domēna vārds, piemēram, *proton.me* un jāpiesit *Iegūt iestatījumus*. Ja pakalpojumu sniedzējs nodrošina [automātisko atklāšanu](https://tools.ietf.org/html/rfc6186), FairEmail aizpildīs resursdatora nosaukumu un porta numuru, pretējā gadījumā sava pakalpojumu sniedzēja norādēs jāmeklē pareizais SMTP resursdatora nosaukums, porta numurs un šifrēšanas protokols (SSL/TLS vai STARTTLS).
 
-See [this FAQ](https://github.com/M66B/FairEmail/blob/master/FAQ.md#FAQ9) about using aliases.
+Par aizstājvārdu izmantošanu skatīt [šo BUJ](https://github.com/M66B/FairEmail/blob/master/FAQ.md#FAQ9).
 
-## Piešķirt atļaujas - lai piekļūtu kontaktinformācijai
+## Piešķirt atļaujas - lai piekļūtu saziņas informācijai
 
-Ja vēlāties meklēt e-pasta adreses, rādīt kontaktpersonu fotoattēlus utt., jums būs jāpiešķir FairEmail atļauja lasīt kontaktinformāciju. Vienkārši noklikšķiniet uz *Piešķirt* un atlasiet *Atļaut*.
+Ja ir vēlēšanas uzmeklēt e-pasta adreses, redzēt kontaktpersonu attēlus utt., būs nepieciešams piešķirt FairEmail atļauju lasīt saziņas informāciju. Vienkārši jāpiesit uz *Piešķirt* un jāizvēlas *Atļaut*.
 
-## Setup battery optimizations - to continuously receive emails
+## Iestatīt akumulatora optimizēšanu - lai pastāvīgi saņemtu e-pasta ziņojumus
 
-On recent Android versions, Android will put apps to sleep when the screen is off for some time to reduce battery usage. If you want to receive new emails without delays, you should disable battery optimizations for FairEmail. Tap *Manage* and follow the instructions.
+Nesenākās Android versijās lietotnes tiek iemidzinātas, kad ekrāns kādu laiku ir izslēgts, lai samazinātu akumulatora lietojumu. Ja ir vēlēšanās nekavējoties saņemt jaunus e-pasta ziņojumus, tad FairEmail lietotnei vajadzētu atspējot akumulatora optimizēšanu. Jāpiesit *Pārvaldīt* un jāseko norādēm.
 
-## Jautājumi vai problēmas
+## Jautājumi vai sarežģījumi
 
-Ja jums ir jautājums vai problēma, lūdzu, meklējiet atbildi [šeit](https://github.com/M66B/FairEmail/blob/master/FAQ.md).
+Ja ir kāds jautājums vai sarežģījums, lūgums meklēt palīdzību [šeit](https://github.com/M66B/FairEmail/blob/master/FAQ.md).

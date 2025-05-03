@@ -211,7 +211,7 @@
     <string name="title_setup_intro">Setting up an account is just three steps and after that you can send and receive emails</string>
     <string name="title_setup_simple">There is no need to change any other options</string>
     <string name="title_setup_issue">FairEmail was developed to help you protect your privacy and represents literally thousands of hours of work. If you have any problems, please contact me first for support before leaving a bad review. I am happy to help!</string>
-    <string name="title_setup_analytics">FairEmail does not display ads and does not track or analyze your behavior. Bugsnag is used for error reporting and is disabled by default.</string>
+    <string name="title_setup_analytics">FairEmail does not display ads and does not track or analyze your behavior.</string>
     <string name="title_setup_quick_accounts">Add or change accounts</string>
     <string name="title_setup_quick_support">Some providers make it difficult to add an account. Please do not blame FairEmail for this, but ask for support instead.</string>
     <string name="title_setup_quick_hint">The entered email address is used to query the email server and autoconfig.thunderbird.net for configuration information</string>
@@ -629,7 +629,7 @@
     <string name="title_advanced_indentation">Left/right indent received/sent messages in conversations</string>
     <string name="title_advanced_highlight_unread">Highlight unread messages</string>
     <string name="title_advanced_account_color">Show a color stripe or color dot</string>
-    <string name="title_advanced_color_stripe_wide">Use wide color stripe</string>
+    <string name="title_advanced_account_color_size">Color stripe width</string>
     <string name="title_advanced_avatars">Show contact photos</string>
     <string name="title_advanced_bimi">Show Brand Indicators for Message Identification (BIMI)</string>
     <string name="title_advanced_bimi_vmc">Require a valid VMC certificate</string>
@@ -1575,7 +1575,7 @@
     <string name="title_rename">Rename</string>
     <string name="title_share">Share</string>
     <string name="title_analyze">Analyze</string>
-    <string name="title_share_link" translatable="false">Share link</string>
+    <string name="title_share_link">Share link</string>
     <string name="title_share_link_open" translatable="false">Open message</string>
     <string name="title_zip" translatable="false">ZIP</string>
     <string name="title_event">Add to calendar</string>
@@ -2965,6 +2965,12 @@
         <item>None</item>
         <item>Stripe</item>
         <item>Dot</item>
+    </string-array>
+
+    <string-array name="accountColorSizes">
+        <item>Narrow</item>
+        <item>Medium</item>
+        <item>Wide</item>
     </string-array>
 
     <string-array name="answerValues" translatable="false">

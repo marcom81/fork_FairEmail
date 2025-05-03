@@ -1113,6 +1113,11 @@
         <item>Stripe</item>
         <item>Dot</item>
     </string-array>
+    <string-array name="accountColorSizes">
+        <item>Narrow</item>
+        <item>Средња</item>
+        <item>Wide</item>
+    </string-array>
     <string-array name="contactTypes">
         <item>Прималац</item>
         <item>Пошиљаоцу</item>

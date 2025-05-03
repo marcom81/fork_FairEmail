@@ -120,6 +120,7 @@ import androidx.core.content.pm.ShortcutInfoCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.text.method.LinkMovementMethodCompat;
 import androidx.core.view.MenuCompat;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -985,6 +986,7 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.ViewHold
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
                     tvBody.setBreakStrategy(LineBreaker.BREAK_STRATEGY_HIGH_QUALITY);
             }
+            ViewCompat.enableAccessibleClickableSpanSupport(tvBody);
             wvBody = vsBody.findViewById(R.id.wvBody);
             pbBody = vsBody.findViewById(R.id.pbBody);
             vwRipple = vsBody.findViewById(R.id.vwRipple);
@@ -4729,7 +4731,7 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.ViewHold
                     card.setClickable(false);
                 }
 
-                if (EntityFolder.DRAFTS.equals(message.folderType) && message.visible == 1 &&
+                if (EntityFolder.DRAFTS.equals(message.folderType) && message.drafts == 1 &&
                         !EntityMessage.PGP_SIGNENCRYPT.equals(message.encrypt) &&
                         !EntityMessage.SMIME_SIGNENCRYPT.equals(message.encrypt)) {
                     context.startActivity(
@@ -6482,7 +6484,7 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.ViewHold
             popupMenu.getMenu().findItem(R.id.menu_force_light).setChecked(force_light);
 
             popupMenu.getMenu().findItem(R.id.menu_share).setEnabled(message.content);
-            popupMenu.getMenu().findItem(R.id.menu_share_link).setVisible(BuildConfig.DEBUG);
+            popupMenu.getMenu().findItem(R.id.menu_share_link).setVisible(!BuildConfig.PLAY_STORE_RELEASE);
             popupMenu.getMenu().findItem(R.id.menu_pin).setVisible(pin);
             popupMenu.getMenu().findItem(R.id.menu_event).setEnabled(message.content);
             popupMenu.getMenu().findItem(R.id.menu_print).setEnabled(Helper.hasWebView(context) && message.content);
@@ -8449,8 +8451,8 @@ public class AdapterMessage extends RecyclerView.Adapter<AdapterMessage.ViewHold
         this.unmetered = state.isUnmetered();
 
         this.colorCardBackground = Helper.resolveColor(context, R.attr.colorCardBackground);
-        boolean color_stripe_wide = prefs.getBoolean("color_stripe_wide", false);
-        this.colorStripeWidth = Helper.dp2pixels(context, color_stripe_wide ? 12 : 6);
+        int account_color_size = prefs.getInt("account_color_size", 6);
+        this.colorStripeWidth = Helper.dp2pixels(context, account_color_size);
         this.colorAccent = Helper.resolveColor(context, androidx.appcompat.R.attr.colorAccent);
         this.textColorPrimary = Helper.resolveColor(context, android.R.attr.textColorPrimary);
         this.textColorPrimaryInverse = Helper.resolveColor(context, android.R.attr.textColorPrimaryInverse);

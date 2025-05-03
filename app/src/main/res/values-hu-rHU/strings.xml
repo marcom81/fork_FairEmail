@@ -161,7 +161,7 @@
     <string name="title_setup_intro">A fiók létrehozása csak három lépésből áll és ezt követően e-maileket küldhet és fogadhat</string>
     <string name="title_setup_simple">Nincs szükség egyéb lehetőségek megváltoztatására</string>
     <string name="title_setup_issue">A FairEmail az Ön adatainak védelmére került fejlesztésre, és több ezer munkaóra eredménye. Ha bármilyen problémája van, kérem vegye fel velem a kapcsolatot mielőtt egy negatív értékelést írna. Örömmel segítek!</string>
-    <string name="title_setup_analytics">FairEmail nem jeneít meg reklámokat, és nem követi vagy analizálja az Ön viselkedését. A Bugsnag kizárólag hibajelentésre szolgál, és alapból ki is van kapcsolva.</string>
+    <string name="title_setup_analytics" comment="title_setup_analytics&#10;Notice text in the welcome section of the main settings screen.&#10;The remark about Bugsnag was removed because Bugsnag was removed.">A FairEmail nem mutat reklámokat, nem követi önt, és nem elemzi a viselkedését.</string>
     <string name="title_setup_quick_accounts">Fiókok hozzáadása vagy módosítása</string>
     <string name="title_setup_quick_support">Egyes szolgáltatók megbonyolították a fiókok elérését. Ha emiatt nehézségekkel találkozol, inkább kérj segítséget reklamáció helyett.</string>
     <string name="title_setup_quick_hint">A megadott email-címmel lekérjük az email-kiszolgáló és az autoconfig.thunderbird.net beállításait</string>
@@ -536,7 +536,7 @@
     <string name="title_advanced_indentation">Beérkezett/elküldött üzenetek balra/jobbra tördelése a beszélgetésekben</string>
     <string name="title_advanced_highlight_unread">Olvasatlan üzenetek kiemelése</string>
     <string name="title_advanced_account_color">Színes sáv, vagy pötty mutatása</string>
-    <string name="title_advanced_color_stripe_wide">Széles színcsík használata</string>
+    <string name="title_advanced_account_color_size">Színes csík szélesség</string>
     <string name="title_advanced_avatars">Névjegyzék fényképeinek megjelenítése</string>
     <string name="title_advanced_bimi">Mutassa a Márkajelzést Üzenetazonosításhoz (BIMI)</string>
     <string name="title_advanced_bimi_vmc">Érvényes VMC tanúsítvány megkövetelése</string>
@@ -684,7 +684,7 @@
     <string name="title_advanced_notify_suppress_in_call">Értesítések késleltetése hívás közben</string>
     <string name="title_advanced_notify_suppress_in_car">Értesítések halasztása amíg az Android Auto csatlakoztatva van</string>
     <string name="title_advanced_notify_summary">Csak összegző értesítések megjelnítése</string>
-    <string name="title_advanced_notify_subject" comment="title_advanced_notify_subject&#10;Title for option switch in the notification settings tab page">Mutatása a tárgyat az értesítésben</string>
+    <string name="title_advanced_notify_subject">Mutatása a tárgyat az értesítésben</string>
     <string name="title_advanced_notify_preview">Üzenet előnézetének megjelnítése az értesítésben</string>
     <string name="title_advanced_notify_preview_all">Összes szöveg előnézete</string>
     <string name="title_advanced_notify_preview_only">Az értesítések csak a szöveg előnézete jelenjen meg</string>
@@ -1172,6 +1172,7 @@
     <string name="title_hint_operations">Műveletek törlése eltűnő üzeneteket és szinkronizálási problémákat okozhat</string>
     <string name="title_op_title_headers">Fejlécek letöltése</string>
     <string name="title_op_title_raw">Nyers üzenet letöltése</string>
+    <string name="title_op_title_add">Üzenet feltöltés</string>
     <string name="title_folder_name">Mappanév</string>
     <string name="title_display_name">Megjelenítendő név</string>
     <string name="title_show_folders">Rejtett mappák megjelenításe</string>
@@ -2371,6 +2372,11 @@
         <item>Egyik sem</item>
         <item>Csík</item>
         <item>Pötty</item>
+    </string-array>
+    <string-array name="accountColorSizes">
+        <item>Keskeny</item>
+        <item>Közepes</item>
+        <item>Széles</item>
     </string-array>
     <string-array name="contactTypes">
         <item>Címzett</item>

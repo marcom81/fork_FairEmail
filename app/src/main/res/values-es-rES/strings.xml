@@ -162,7 +162,7 @@
     <string name="title_setup_intro">Configurar una cuenta son sólo tres pasos y después puede enviar y recibir correos electrónicos</string>
     <string name="title_setup_simple">No hay necesidad de cambiar ninguna otra opción</string>
     <string name="title_setup_issue">FairEmail fue desarrollado para ayudarle a proteger su privacidad y representa literalmente miles de horas de trabajo. Si tiene algún problema, por favor contácteme primero para obtener ayuda antes de dejar una mala revisión. ¡Estoy encantado de ayudar!</string>
-    <string name="title_setup_analytics">FairEmail no muestra anuncios y no rastrea o analiza su comportamiento. Bugsnag se utiliza para informar de errores y está deshabilitado por defecto.</string>
+    <string name="title_setup_analytics" comment="title_setup_analytics&#10;Notice text in the welcome section of the main settings screen.&#10;The remark about Bugsnag was removed because Bugsnag was removed.">FairEmail no muestra anuncios y no rastrea ni analiza su comportamiento.</string>
     <string name="title_setup_quick_accounts">Añadir o cambiar cuentas</string>
     <string name="title_setup_quick_support">Algunos proveedores hacen difícil añadir una cuenta. Por favor, no culpe a FairEmail por esto, en su lugar pida ayuda.</string>
     <string name="title_setup_quick_hint">La dirección de correo electrónico ingresada se utiliza para consultar al servidor de correo electrónico y autoconfig.thunderbird.net para obtener información de configuración</string>
@@ -539,7 +539,7 @@
     <string name="title_advanced_indentation">Sangría izquierda/derecha para mensajes recibidos/enviados en conversaciones</string>
     <string name="title_advanced_highlight_unread">Resaltar mensajes no leídos</string>
     <string name="title_advanced_account_color">Mostrar línea de color o punto de color</string>
-    <string name="title_advanced_color_stripe_wide">Usar banda de color ancha</string>
+    <string name="title_advanced_account_color_size">Ancho de las bandas de color</string>
     <string name="title_advanced_avatars">Mostrar fotos de contactos</string>
     <string name="title_advanced_bimi">Mostrar Brand Indicators for Message Identification (BIMI)</string>
     <string name="title_advanced_bimi_vmc">Requerir un certificado VMC válido</string>
@@ -687,7 +687,7 @@
     <string name="title_advanced_notify_suppress_in_call">Demorar notificaciones durante una llamada</string>
     <string name="title_advanced_notify_suppress_in_car">Retrasar notificaciones mientras Android Auto está conectado</string>
     <string name="title_advanced_notify_summary">Mostrar notificación resumen únicamente</string>
-    <string name="title_advanced_notify_subject" comment="title_advanced_notify_subject&#10;Title for option switch in the notification settings tab page">Mostrar asunto en las notificaciones</string>
+    <string name="title_advanced_notify_subject">Mostrar asunto en las notificaciones</string>
     <string name="title_advanced_notify_preview">Mostrar vista previa del mensaje en notificaciones</string>
     <string name="title_advanced_notify_preview_all">Previsualizar todo el texto</string>
     <string name="title_advanced_notify_preview_only">Mostrar notificaciones sólo con un texto de vista previa</string>
@@ -1177,6 +1177,7 @@
     <string name="title_hint_operations">Eliminar operaciones puede resultar en la desaparición de mensajes y problemas de sincronización</string>
     <string name="title_op_title_headers">Descargando encabezados</string>
     <string name="title_op_title_raw">Descargando mensaje sin procesar</string>
+    <string name="title_op_title_add">Subiendo mensaje</string>
     <string name="title_folder_name">Nombre de carpeta</string>
     <string name="title_display_name">Nombre para mostrar</string>
     <string name="title_show_folders">Mostrar carpetas ocultas</string>
@@ -2376,6 +2377,11 @@
         <item>Ninguna</item>
         <item>Línea</item>
         <item>Punto</item>
+    </string-array>
+    <string-array name="accountColorSizes">
+        <item>Angosta</item>
+        <item>Mediano</item>
+        <item>Ancha</item>
     </string-array>
     <string-array name="contactTypes">
         <item>Destinatario</item>
