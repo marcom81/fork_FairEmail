@@ -2955,6 +2955,7 @@ The following extra functions are available:
 * *Size(array)* (returns the number of items in an array; since version 1.2179)
 * *knownContact()* (returns a boolean indicating that the from/reply-to address is in the Android address book or in the local contacts database)
 * *AI(prompt)* (perform interference with the configured AI model using the specified prompt, returning the result as a string; since version 1.2243)
+* *Is(flag)* (flag is one of seen, answered, flagged, deleted; to check if a message is read (seen), starred (flagged), etc.; since version 1.2277)
 
 Example conditions:
 
@@ -2988,7 +2989,7 @@ You can select one of these actions to apply to matching messages:
 * Delete permanently (since version 1.1801)
 * Play sound (since version 1.1803; experimental)
 * Answer/forward (with template)
-* Text-to-speech (sender and subject)
+* Text-to-speech (sender and subject, not available in the Play Store version due to Play Store policies)
 * Automation (Tasker, etc)
 * Webhook (since version 1.2107)
 
@@ -3146,6 +3147,8 @@ Since version 1.2061 it is possible to execute rules with an automation app, lik
 ```
 (adb shell) am start-foreground-service -a eu.faircode.email.RULE --es account <account name> -es rule <unique rule name>
 ```
+
+**Note**: Due to Play Store policies, automation intents are not available in the Play Store version of the app.
 
 <br />
 
@@ -3374,6 +3377,8 @@ Extras: account:Gmail
 ```
 
 Account names are case sensitive.
+
+**Note**: Due to Play Store policies, automation intents are not available in the Play Store version of the app.
 
 Scheduling is a pro feature.
 
@@ -5102,6 +5107,8 @@ This command can be sent to FairEmail from an automation app to update the prote
 Updating once a week will probably be sufficient,
 please see [here](https://github.com/disconnectme/disconnect-tracking-protection/commits/master) for recent lists changes.
 
+**Note**: Due to Play Store policies, automation intents are not available in the Play Store version of the app.
+
 <br />
 
 <a name="faq160"></a>
@@ -5634,6 +5641,8 @@ Since version 1.2068 it is possible to send a template message with an intent:
 
 **Important**: you need to configure a display name for the identity, and use this to identify the identity.
 
+**Note**: Due to Play Store policies, automation intents are not available in the Play Store version of the app.
+
 <br />
 
 <a name="faq180"></a>
@@ -5700,6 +5709,8 @@ If you ticked *Do not ask this again for [domain name]*, you can undo this by us
 If you disabled confirming links, you can enable this (temporarily) again in the privacy settings tab page of the app (*Confirm opening links*: off).
 
 Note that you might need to enable confirming links and reset questions to show the link confirmation dialog again.
+
+You can also long press a link to show the link confirmation dialog.
 
 Please see [this FAQ](#faq35) on why you should be careful when opening links.
 
@@ -5982,7 +5993,7 @@ This feature is experimental and requires version 1.2053 or later for the GitHub
 
 You can download and keep older messages in the unified inbox folders by using *Fetch more messages* in the three-dots overflow menu of the start screen.
 For other folders, you can long press the folder in the folder list of the account (tap on the account name in the navigation menu = left side menu).
-When you long press on a parent folder, there will be a subfolders option with a menu item to fetch more messages for all child folders.
+When you long press on a parent folder, there will be a subfolders sub-menu with a fetch more messages option for all child folders.
 Please read the remark in the confirmation dialog box.
 
 Note that starred (favorite) messages will be kept on your device "forever".

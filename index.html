@@ -8,10 +8,19 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="shortcut icon" href="https://raw.githubusercontent.com/M66B/FairEmail/master/app/src/main/ic_launcher-web.png">
   <meta name="theme-color" content="#006db3">
@@ -1621,6 +1630,7 @@ X-Google-Original-From: Somebody &lt;somebody+extra@example.org&gt;</code></pre>
 <li><em>Size(array)</em> (returns the number of items in an array; since version 1.2179)</li>
 <li><em>knownContact()</em> (returns a boolean indicating that the from/reply-to address is in the Android address book or in the local contacts database)</li>
 <li><em>AI(prompt)</em> (perform interference with the configured AI model using the specified prompt, returning the result as a string; since version 1.2243)</li>
+<li><em>Is(flag)</em> (flag is one of seen, answered, flagged, deleted; to check if a message is read (seen), starred (flagged), etc.; since version 1.2277)</li>
 </ul>
 <p>Example conditions:</p>
 <p><code>header("X-Mailer") contains "Open-Xchange" &amp;&amp; from matches ".*service@.*"</code></p>
@@ -1647,7 +1657,7 @@ X-Google-Original-From: Somebody &lt;somebody+extra@example.org&gt;</code></pre>
 <li>Delete permanently (since version 1.1801)</li>
 <li>Play sound (since version 1.1803; experimental)</li>
 <li>Answer/forward (with template)</li>
-<li>Text-to-speech (sender and subject)</li>
+<li>Text-to-speech (sender and subject, not available in the Play Store version due to Play Store policies)</li>
 <li>Automation (Tasker, etc)</li>
 <li>Webhook (since version 1.2107)</li>
 </ul>
@@ -1742,6 +1752,7 @@ $$aligned$ (since version 1.2049)</code></pre>
 <p><br /></p>
 <p>Since version 1.2061 it is possible to execute rules with an automation app, like for example Tasker.</p>
 <pre><code>(adb shell) am start-foreground-service -a eu.faircode.email.RULE --es account &lt;account name&gt; -es rule &lt;unique rule name&gt;</code></pre>
+<p><strong>Note</strong>: Due to Play Store policies, automation intents are not available in the Play Store version of the app.</p>
 <p><br /></p>
 <p>Since version 1.2107 it is possible to executed webhooks. The supported HTTP methods are GET, HEAD, OPTIONS, POST and POST. The query parameters will be sent as body in the case of POST and PUT. Note that execution of webhooks won’t be retried. So, don’t use this for anything critical.</p>
 <p>This website might be useful for testing webhooks:</p>
@@ -1840,6 +1851,7 @@ Target: Service</code></pre>
 <p>To enable/disable an account with the name <em>Gmail</em>:</p>
 <pre><code>Extras: account:Gmail</code></pre>
 <p>Account names are case sensitive.</p>
+<p><strong>Note</strong>: Due to Play Store policies, automation intents are not available in the Play Store version of the app.</p>
 <p>Scheduling is a pro feature.</p>
 <p><br /></p>
 <p><a name="faq79"></a> <strong>(79) How do I use synchronize on demand (manual)?</strong></p>
@@ -2597,6 +2609,7 @@ https://favicon.yandex.net/favicon/{domain}</code></pre>
 <p>This command can be sent to FairEmail from an automation app to update the protection lists:</p>
 <pre><code>(adb shell) am start-foreground-service -a eu.faircode.email.DISCONNECT.ME</code></pre>
 <p>Updating once a week will probably be sufficient, please see <a href="https://github.com/disconnectme/disconnect-tracking-protection/commits/master">here</a> for recent lists changes.</p>
+<p><strong>Note</strong>: Due to Play Store policies, automation intents are not available in the Play Store version of the app.</p>
 <p><br /></p>
 <p><a name="faq160"></a> <strong>(160) Can you add permanent deletion of messages without confirmation?</strong></p>
 <p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq160">Google Translate</a></p>
@@ -2855,6 +2868,7 @@ _submission._tcp SRV 0 1 587 smtp.example.com.</code></pre>
 <p>Since version 1.2068 it is possible to send a template message with an intent:</p>
 <pre><code>(adb shell) am start-foreground-service -a eu.faircode.email.TEMPLATE --es template &lt;template name&gt; --es identity &lt;identity display name&gt; --es to &lt;email address&gt; --es cc &lt;email address&gt; --es subject &lt;subject&gt;</code></pre>
 <p><strong>Important</strong>: you need to configure a display name for the identity, and use this to identify the identity.</p>
+<p><strong>Note</strong>: Due to Play Store policies, automation intents are not available in the Play Store version of the app.</p>
 <p><br /></p>
 <p><a name="faq180"></a> <strong>(180) How do I use LanguageTool?</strong></p>
 <p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq180">Google Translate</a></p>
@@ -2879,6 +2893,7 @@ _submission._tcp SRV 0 1 587 smtp.example.com.</code></pre>
 <p>If you ticked <em>Do not ask this again for [domain name]</em>, you can undo this by using the <em>Reset questions</em> button in the miscellaneous settings tab page of the app.</p>
 <p>If you disabled confirming links, you can enable this (temporarily) again in the privacy settings tab page of the app (<em>Confirm opening links</em>: off).</p>
 <p>Note that you might need to enable confirming links and reset questions to show the link confirmation dialog again.</p>
+<p>You can also long press a link to show the link confirmation dialog.</p>
 <p>Please see <a href="#faq35">this FAQ</a> on why you should be careful when opening links.</p>
 <p><br /></p>
 <p><a name="faq183"></a> <strong>(183) How do I use Send?</strong></p>
@@ -3004,7 +3019,7 @@ adb install /path/to/FairEmail-xxx.apk</code></pre>
 <p><br></p>
 <p><a name="faq191"></a> <strong>(191) How do I download and keep older messages on my device?</strong></p>
 <p>🌎 <a href="https://translate.google.com/translate?sl=en&amp;u=https%3A%2F%2Fm66b.github.io%2FFairEmail%2F%23faq191">Google Translate</a></p>
-<p>You can download and keep older messages in the unified inbox folders by using <em>Fetch more messages</em> in the three-dots overflow menu of the start screen. For other folders, you can long press the folder in the folder list of the account (tap on the account name in the navigation menu = left side menu). When you long press on a parent folder, there will be a subfolders option with a menu item to fetch more messages for all child folders. Please read the remark in the confirmation dialog box.</p>
+<p>You can download and keep older messages in the unified inbox folders by using <em>Fetch more messages</em> in the three-dots overflow menu of the start screen. For other folders, you can long press the folder in the folder list of the account (tap on the account name in the navigation menu = left side menu). When you long press on a parent folder, there will be a subfolders sub-menu with a fetch more messages option for all child folders. Please read the remark in the confirmation dialog box.</p>
 <p>Note that starred (favorite) messages will be kept on your device “forever”.</p>
 <p>Instead of downloading many messages to your device, consider <a href="#faq13">searching for messages on the email server</a>.</p>
 <p>Longer explanation: the app has a sync and a keep window per folder. The <em>Fetch more messages</em> menu item is, in fact, a mini wizard to change the keep window of one or more folders at the same time, and to initiate a corresponding synchronization operation. If you long press on a folder in the folder list and select <em>Edit properties</em>, you can change the sync and keep window of the folder. The sync window determines which messages will be checked with a standard sync operation (default 7 days), and the keep window determines how long messages will be kept on the device (default 30 days). If you sync another time within 30 seconds, all messages in the keep window will be checked, which is useful when you have been moving around messages with another email client, for example on your desktop computer. It is mostly pointless to check all messages all the time, especially considering that this will use battery power, which is why there is a separate sync and keep window, and why the app checks messages younger than a week only.</p>

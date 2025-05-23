@@ -334,7 +334,7 @@ It blokkearjen fan in ôfstjoerderdomein makket gebrûk fan filterregels, wat in
     <string name="title_setup_reset_files">Bestannen besjen</string>
     <string name="title_setup_reset_images">Ofbyldingen toane</string>
     <string name="title_setup_reset_full">Orizjinele berjochten toane</string>
-    <string name="title_check_gmail_oauth">Jo Gmail-accounts sille wurkje bliuwe nei 30 maaie 2022</string>
+    <string name="title_check_gmail_oauth">Jo Gmail-accounts sille wurkjen bliuwe nei 30 maaie 2022</string>
     <string name="title_check_gmail_password">Guon fan jo Gmail-accounts wurkje mooglik net mear nei 30 maaie 2022</string>
     <string name="title_check_outlook_oauth">Jo Outlook-accounts sille nei 16 septmber 2024 wurkje bliuwe</string>
     <string name="title_check_outlook_password">Guon fan jo Outlook-/Hotmail-/Live-accounts sille nei 16 septimber 2024 net mear wurkje</string>
@@ -913,7 +913,6 @@ https://en.wikipedia.org/wiki/ASCII</string>
     <string name="title_advanced_default_folder_hint">        Android kin tastimming freegje foar tagong ta de selektearre map, ek al hat de app dit net nedich.
         Jo kinne it seleksjefinster annulearje om de standert map te werstellen (meastentiids de map ‘Download’).
     </string>
-    <string name="title_advanced_restore_on_launch_hint">Werstel lêste app-steat by opnij starten fia it launcher-piktogram binnen %1$d minuten</string>
     <string name="title_advanced_autoexpand_hint">Berjocht automatysk iepenje as der mar ien berjocht of mar ien net-lêzen berjocht yn in petear is</string>
     <string name="title_advanced_expandall_hint">De antwurdknop sil net werjûn wurde wannear’t meardere berjochten iepenklapt wurde, omdat it dan net dúdlik is op hokker berjocht de knop fan tapassing is</string>
     <string name="title_advanced_autoseen_hint">Berjochten automatysk as lêzen markearje by útwreidzjen kin útskeakele wurde yn de avansearre accountynstellingen fan elk account</string>
